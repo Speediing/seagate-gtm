@@ -317,10 +317,16 @@ button:active:not(:focus-visible),
 .brand-lockup {
   --brand-h: 28px;
   display: inline-flex;
+  flex: 0 0 auto;
+  justify-self: start;
+  justify-content: flex-start;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
+  width: fit-content;
+  max-width: 100%;
   min-width: 0;
   color: var(--ink);
+  line-height: 1;
   text-decoration: none;
 }
 
