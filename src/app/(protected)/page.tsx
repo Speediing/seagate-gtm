@@ -23,11 +23,11 @@ export default function HomePage() {
           <HeroTelemetry />
           <section className="hero">
             <div>
-              <p className="eyebrow">A proactive agent for every Datadog rep</p>
+              <p className="eyebrow">A proactive agent for every Seagate rep</p>
               <h1>The agents that work while your reps sell.</h1>
               <p className="hero-intro">
                 Grok Bot listens to calls, watches the inbox, and researches
-                accounts in the background. Work triggers it — not another
+                accounts in the background. Work triggers it, not another
                 prompt.
               </p>
             </div>
@@ -40,7 +40,7 @@ export default function HomePage() {
               agent teammates. Anything your sellers do today can be done
               through Grok Bot.
             </h2>
-            <p>These are three examples from millions — not the boundary.</p>
+            <p>These are three examples from millions, not the boundary.</p>
           </section>
 
           <div className="metric-grid">
@@ -79,11 +79,11 @@ export default function HomePage() {
 
       <footer className="site-footer">
         <div>
-          <p className="footer-title">Cursor for Datadog</p>
-          <p>Grok Bot for Datadog sales</p>
+          <p className="footer-title">Cursor for Seagate</p>
+          <p>Grok Bot for Seagate sales</p>
         </div>
         <address className="footer-contact">
-          <p>Datadog&apos;s existing Cursor contact</p>
+          <p>Seagate&apos;s existing Cursor contact</p>
           <strong>Madeline Ingleby</strong>
           <a href="mailto:madeline.ingleby@cursor.com">
             madeline.ingleby@cursor.com

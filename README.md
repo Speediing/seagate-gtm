@@ -1,6 +1,6 @@
-# Grok Bot for Datadog GTM
+# Grok Bot for Seagate sales
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
+Passworded site. Grok Bot from SpaceXAI. This is the Seagate retarget of Speediing/datadog-cro@f22d68f.
 
 ## What it is
 
@@ -28,4 +28,4 @@ gh release download krista-gtm-clips-720p-2026-08-26 \
 
 ## Deploy
 
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
+Preview only. Jason preview-deploys under the `jasonwiker` Vercel team, project name `seagate-gtm`. Set `SITE_PASSWORD=land2expand`. Do not run `vercel --prod`. Do not promote to a public production domain until Jason says so.
