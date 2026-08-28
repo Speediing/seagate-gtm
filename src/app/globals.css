@@ -315,10 +315,10 @@ button:active:not(:focus-visible),
 }
 
 .brand-lockup {
-  --dd-h: 36px;
+  --brand-h: 28px;
   display: inline-flex;
-  align-items: flex-start;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.35rem;
   min-width: 0;
   color: var(--ink);
   text-decoration: none;
@@ -335,13 +335,12 @@ button:active:not(:focus-visible),
 }
 
 .brand-dd {
-  height: var(--dd-h);
+  height: var(--brand-h);
 }
 
 .brand-sxai {
-  height: calc(var(--dd-h) * 0.58);
-  max-width: calc(var(--dd-h) * 4.8);
-  margin-top: calc(var(--dd-h) * 0.2);
+  height: calc(var(--brand-h) * 0.66);
+  max-width: none;
   filter: brightness(0);
 }
 
@@ -350,19 +349,17 @@ button:active:not(:focus-visible),
 }
 
 .brand-lockup-sm {
-  --dd-h: 24px;
+  --brand-h: 21px;
 }
 
 .brand-lockup-md,
 .brand-lockup-lg {
-  --dd-h: 32px;
+  --brand-h: 28px;
 }
 
 .brand-times {
-  align-self: center;
-  margin-top: 0;
   color: var(--muted);
-  font-size: calc(var(--dd-h) * 0.28);
+  font-size: calc(var(--brand-h) * 0.32);
   font-weight: 300;
   line-height: 1;
 }
