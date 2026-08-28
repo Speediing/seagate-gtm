@@ -1,6 +1,6 @@
 # Grok Bot for Seagate sales
 
-Passworded site. Grok Bot from SpaceXAI. Seagate restyle of the Datadog grokbot leave-behind (`datadog-grokbot.vercel.app`, Speediing/datadog-cro@f22d68f). Lockup is SpaceX × Seagate.
+Passworded site. Grok Bot from SpaceXAI. Seagate restyle of the live Datadog grokbot leave-behind (`https://datadog-grokbot.vercel.app`). Same hero chips, phone mock, three jobs, six-agent band, compare table, and six testimonials. Lockup is Seagate × SpaceXAI.
 
 ## What it is
 

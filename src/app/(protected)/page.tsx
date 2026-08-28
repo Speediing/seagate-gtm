@@ -1,5 +1,5 @@
 import { CompareTable } from "@/components/CompareTable";
-import { HeroTelemetry } from "@/components/HeroTelemetry";
+import { HeroDemo } from "@/components/HeroDemo";
 import { JobSection } from "@/components/JobSection";
 import { QuoteWall } from "@/components/QuoteWall";
 import { SiteNav } from "@/components/SiteNav";
@@ -20,17 +20,8 @@ export default function HomePage() {
 
       <div className="report">
         <div className="report-hero">
-          <HeroTelemetry />
           <section className="hero">
-            <div>
-              <p className="eyebrow">A proactive agent for every Seagate rep</p>
-              <h1>The agents that work while your reps sell.</h1>
-              <p className="hero-intro">
-                Grok Bot listens to calls, watches the inbox, and researches
-                accounts in the background. Work triggers it, not another
-                prompt.
-              </p>
-            </div>
+            <HeroDemo />
           </section>
 
           <section className="usecase-framing">
@@ -45,16 +36,14 @@ export default function HomePage() {
 
           <div className="metric-grid">
             {JOBS.map((job) => (
-              <a
-                key={job.id}
-                className="metric-card"
-                href={`#${job.id}`}
-              >
+              <a key={job.id} className="metric-card" href={`#${job.id}`}>
                 <div className="metric-card-top">
                   <p>Sample {String(job.number).padStart(2, "0")}</p>
                 </div>
                 <h2>{job.title}</h2>
-                <p className="metric-trigger">Starts when {job.trigger.toLowerCase()}</p>
+                <p className="metric-trigger">
+                  Starts when {job.trigger.toLowerCase()}
+                </p>
               </a>
             ))}
           </div>
