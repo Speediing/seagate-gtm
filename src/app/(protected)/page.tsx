@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CompareTable } from "@/components/CompareTable";
 import { HeroDemo } from "@/components/HeroDemo";
 import { JobSection } from "@/components/JobSection";
@@ -9,11 +10,15 @@ export default function HomePage() {
   return (
     <main id="top">
       <div className="hero-watercolor">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           className="hero-watercolor-image"
-          src="/brand/watercolor-pad.png"
+          src="/brand/watercolor-pad.webp"
           alt=""
+          width={1280}
+          height={720}
+          sizes="100vw"
+          priority
+          unoptimized
         />
         <SiteNav />
       </div>
@@ -58,7 +63,7 @@ export default function HomePage() {
 
       <div className="orbit-break" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/watercolor-orbit.png" alt="" />
+        <img src="/brand/watercolor-orbit.webp" alt="" />
       </div>
 
       <div className="report">
