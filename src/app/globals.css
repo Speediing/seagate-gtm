@@ -341,13 +341,13 @@ button:active:not(:focus-visible),
 }
 
 .brand-dd {
-  height: var(--brand-h);
-  transform: translateY(-8%);
+  height: calc(var(--brand-h) * 1.4);
 }
 
 .brand-sxai {
   height: calc(var(--brand-h) * 0.66);
   max-width: none;
+  transform: translateY(-16%);
   filter: brightness(0);
 }
 
