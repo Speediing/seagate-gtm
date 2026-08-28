@@ -1472,6 +1472,12 @@ button:active:not(:focus-visible),
   min-height: 28rem;
 }
 
+.leave-heard.size-sm .heard-slide.datadog-usecase-slide {
+  aspect-ratio: auto;
+  overflow: hidden;
+  min-height: 0;
+}
+
 .heard-slide img {
   display: block;
   width: 100%;
