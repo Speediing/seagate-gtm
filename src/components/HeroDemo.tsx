@@ -200,8 +200,9 @@ export function HeroDemo() {
         <p className="eyebrow">A proactive agent for every Seagate rep</p>
         <h1>The agents that work while your reps sell.</h1>
         <p className="hero-intro">
-          Grok Bot listens to calls, watches the inbox, and researches accounts
-          in the background. Work triggers it, not another prompt.
+          Grok Bot listens for storage needs on calls, watches the inbox, and
+          researches capacity signals in the background. Work triggers it, not
+          another prompt.
         </p>
         <div className="hero-phone-jobs" aria-label="Choose a Grok Bot job">
           {HERO_JOBS.map((item, index) => (

@@ -1,10 +1,10 @@
 # Grok Bot for Seagate sales
 
-Passworded site. Grok Bot from SpaceXAI. Seagate restyle of the live Datadog grokbot leave-behind (`https://datadog-grokbot.vercel.app`). Same hero chips, phone mock, three jobs, six-agent band, compare table, and six testimonials. Lockup is Seagate × SpaceXAI.
+Passworded Seagate sales leave-behind for Grok Bot from SpaceXAI. The page uses Seagate storage stories and artwork while keeping the established hero, phone mock, three jobs, six-agent band, comparison, and six public testimonials. The lockup is Seagate × SpaceXAI.
 
 ## What it is
 
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+Three Seagate GTM jobs on one page. The stories use Aster Peak Compute, a fictional account, to cover a live Exos deck update, overnight drive-order questions, and outbound built from storage signals. Each job has an interactive Grok Bot demo and the matching Krista Letz clip. The existing comparison and public Grok Bot quote wall remain unchanged.
 
 ## Run locally
 

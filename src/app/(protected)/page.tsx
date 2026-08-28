@@ -32,11 +32,13 @@ export default function HomePage() {
           <section className="usecase-framing">
             <p className="eyebrow">Three sample use cases</p>
             <h2>
-              Grok Bot gives every seller their own fleet of always-available
-              agent teammates. Anything your sellers do today can be done
-              through Grok Bot.
+              Grok Bot gives every Seagate seller a fleet of always-available
+              agent teammates for the work around each storage deal.
             </h2>
-            <p>These are three examples from millions, not the boundary.</p>
+            <p>
+              These three examples cover live calls, overnight questions, and
+              new pipeline. They are not the limit.
+            </p>
           </section>
 
           <div className="metric-grid">

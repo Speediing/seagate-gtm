@@ -1,120 +1,126 @@
 import type { Artifact, CroJob, SlideCard } from "./types";
 
-export const ACME_TAIL_SLIDES: SlideCard[] = [
+export const ASTER_PEAK_TAIL_SLIDES: SlideCard[] = [
   {
     n: 4,
     kicker: "They said · 4 min ago",
     voice: "them",
-    title: "The Sev-2",
-    body: "We cannot tell a Sev-2 story across APM and logs without stitching tools.",
+    title: "The rebuild window",
+    body: "A failed drive leaves us exposed for more than a day while the array rebuilds.",
   },
   {
     n: 5,
     kicker: "Mapped live",
     voice: "us",
-    title: "Start with APM + Logs",
-    body: "Same team that already feels the outage. Start there this quarter.",
+    title: "Qualify Exos first",
+    body: "Run one drive qualification against their current chassis and rebuild target.",
   },
   {
     n: 6,
     kicker: "They said · 4 min ago",
     voice: "them",
-    title: "The security bar",
-    body: "Security will not let another agent in without SSO and an audit trail.",
+    title: "The density target",
+    body: "We need more usable petabytes per rack before the next hall fills.",
   },
   {
     n: 7,
     kicker: "Mapped live",
     voice: "us",
-    title: "SSO, then Bits AI",
-    body: "Named on this call. One team. Bits AI after they see a faster fix.",
+    title: "Plan the HAMR path",
+    body: "Confirm today's Exos fit, then map higher-capacity HAMR options to the next refresh.",
   },
 ];
 
-export const ACME_PROCUREMENT: Extract<Artifact, { kind: "redlines" }> = {
+export const ASTER_PEAK_PROCUREMENT: Extract<
+  Artifact,
+  { kind: "redlines" }
+> = {
   kind: "redlines",
-  title: "Acme procurement · overnight invoices",
+  title: "Aster Peak procurement · overnight order",
   paperTitle: "Their questions",
-  from: "Jordan Hale, Acme procurement · 5:27am your time",
+  from: "Jordan Hale, Aster Peak procurement · 5:27am your time",
   marks: [
     {
-      text: "Why the $427.51 catch-up, and will it happen again?",
-      note: "Billing-system miss on our side, 1 July–17 July. INV-0081 is the one-time correction. Gap is closed.",
+      text: "Why does INV-2281 show 1,440 drives when the PO is for 1,920?",
+      note: "The invoice covers the first shipped lot. The remaining 480 drives stay on the open PO and bill after shipment.",
       take: true,
     },
     {
-      text: "Can the admin portal be trusted? Any more retro charges?",
-      note: "Dashboard for usage. Invoices under Billing are the billed record. Flag anything from a closed period before it is billed.",
+      text: "Do production drives match the model and firmware we qualified?",
+      note: "The order configuration matches the approved model family and firmware branch. The serial-level list will attach before acceptance.",
       take: true,
     },
     {
-      text: "How was the $715.55 Teams invoice calculated?",
-      note: "Two mid-cycle adds, 19→20→21, not one full-year seat. Proration through 17 July 2027. Seat is $384/year.",
+      text: "Can the archive lot arrive before the compute-hall lot?",
+      note: "Supply planning has the archive lot first. The delivery table below separates both dates and quantities.",
       take: true,
     },
     {
-      text: "Spend caps, PO invoicing, per-user limits.",
-      note: "Team-wide monthly cap is on Teams. Per-user caps and annual PO are Enterprise. Do not re-trade that from this inbox.",
+      text: "Can we split the PO between purchased HDD capacity and Lyve Cloud?",
+      note: "Hold this one. Finance and procurement need to price the split before the rep puts it in writing.",
       take: false,
     },
   ],
   reply: {
-    to: "Jordan Hale, Acme procurement",
-    subject: "Acme invoices INV-0080 and INV-0081. Answers you can send today",
-    body: "Hi Jordan,\n\nINV-0081 ($427.51) is a one-time catch-up for usage 1–17 July that our billing system missed. Not new usage. Gap is closed. No further retros expected; I would flag any closed-period item before it billed.\n\nDashboard = usage. Billing invoices = what was billed. Those should now match. Send any line that does not.\n\nINV-0080 ($715.55) is two mid-cycle seat adds (19→21), not a full-year seat at $384. Renewal date does not change.\n\nTeam-wide spend cap is on Teams. Per-user caps and annual PO are Enterprise — that stays on the order form.\n\nHappy to jump on a call before these are processed.\n\nBest,",
+    to: "Jordan Hale, Aster Peak procurement",
+    subject: "Aster Peak PO-1847 and INV-2281. Answers for today",
+    body: "Hi Jordan,\n\nINV-2281 covers the 1,440 Exos drives in the first shipped lot. The remaining 480 stay on PO-1847 and will bill after shipment.\n\nThe order configuration matches the model family and firmware branch your team qualified. We will attach the serial-level list before acceptance.\n\nSupply planning has the archive lot arriving before the compute-hall lot. I added both dates and quantities to the delivery table.\n\nI am holding the HDD and Lyve Cloud PO split until our finance and procurement teams confirm the structure. I will send that as a separate answer.\n\nBest,",
   },
 };
 
-export const ACME_OUTBOUND: Extract<Artifact, { kind: "outbound" }> = {
+export const ASTER_PEAK_OUTBOUND: Extract<
+  Artifact,
+  { kind: "outbound" }
+> = {
   kind: "outbound",
-  title: "Acme outbound",
-  account: "Acme",
+  title: "Aster Peak outbound",
+  account: "Aster Peak Compute",
   hypothesis: [
     {
       k: "Why us",
-      body: "On-call still stitches Prometheus, Grafana, and a log pile to name a Sev-2. APM + Logs is the start, not a catalog pitch.",
+      body: "Exos fits the data-center HDD qualification they are planning. Lyve Cloud gives the archive team another option to compare with its next tape cycle.",
     },
     {
       k: "Why now",
-      body: "Public incident 14 days ago. 47 minutes to name the failing service. Staff SRE JD asks for stitching APM and logs. The pain is current.",
+      body: "Their public capacity plan says archive data is growing 30% this year. A new procurement notice says drive qualification starts this quarter.",
     },
     {
       k: "Why them",
-      body: "VP Eng owns time-to-fix. Platform director lives in that stitch. They are the ones who felt the last Sev-2.",
+      body: "The VP of Infrastructure owns capacity and archive cost. The storage engineering director owns drive qualifications and rebuild windows.",
     },
   ],
   evidence: [
     {
-      source: "Status page · 14 days ago",
+      source: "Capacity plan · 12 days ago",
       finding:
-        "Sev-2, 47 minutes to name the failing service. Postmortem language is still 'we jumped three tools.'",
+        "Aster Peak expects 30% archive growth and sets a hyperscaler-density target for the next data hall.",
     },
     {
-      source: "Careers · Staff SRE",
+      source: "Procurement notice · this month",
       finding:
-        "JD asks for 'experience stitching APM and logs across teams.' Open role, posted this month.",
+        "The company plans to qualify a new data-center HDD before its fourth-quarter capacity purchase.",
     },
     {
-      source: "Engineering blog",
+      source: "Careers · storage architect",
       finding:
-        "We outgrew homegrown dashboards. No named replacement. That is the gap.",
+        "The open role covers tape economics, object storage, drive qualification, and rebuild testing.",
     },
   ],
   targets: [
     {
-      name: "Priya Shah",
-      role: "VP Engineering",
-      why: "Owns time-to-fix. Named in the SRE hiring chain.",
+      name: "Maya Chen",
+      role: "VP Infrastructure",
+      why: "Owns the capacity plan, rack-density target, and archive budget.",
     },
     {
-      name: "Chris Okonkwo",
-      role: "Director, Platform",
-      why: "Team is the one stitching APM and logs today.",
+      name: "Luis Romero",
+      role: "Director, Storage Engineering",
+      why: "Owns the drive qualification and the rebuild-window test.",
     },
   ],
   page: {
-    headline: "Acme's Sev-2 is a stitching problem",
-    body: "The last incident and the Staff SRE JD say the same thing. Start APM + Logs in the platform team. Bits AI after that team has a week-3 number. Not a product tour.",
+    headline: "Aster Peak is planning more capacity per rack",
+    body: "Start with an Exos qualification against the current chassis and rebuild target. Compare Lyve Cloud with the next tape cycle for archive data. Map the HAMR path to the next refresh after the first qualification is clear.",
   },
 };
 
@@ -126,45 +132,46 @@ export const JOBS: CroJob[] = [
     trigger: "A customer call starts",
     backgroundAction: "Listening to discovery + updating the open deck",
     problem:
-      "A generic deck is a pitch they have already sat through. The wow is hearing their own discovery back, then seeing the next product named for their team, while they are still on.",
+      "A generic storage deck misses the details that matter. The useful version reflects the customer's rebuild window, capacity target, and qualification plan while the call is still live.",
     botJob:
-      "Granola is in while you are on. The last slides become their words and a product suggestion that fits this room. Not last quarter's story.",
+      "Granola listens while the rep is on the call. Grok Bot turns the customer's words into new slides and maps those needs to Exos and the HAMR roadmap.",
     storyboard: [
       {
         when: "Minute 8",
-        label: "The call starts. Grok is already listening — no prompt needed.",
+        label: "The call starts. Grok is already listening. No prompt needed.",
         scene: "call",
         visual: {
           kind: "live-call",
-          title: "Acme discovery",
+          title: "Aster Peak discovery",
           people: [
-            { initials: "JW", name: "You" },
-            { initials: "PS", name: "Priya" },
-            { initials: "CO", name: "Chris" },
+            { initials: "AE", name: "You" },
+            { initials: "MC", name: "Maya" },
+            { initials: "LR", name: "Luis" },
           ],
         },
       },
       {
         when: "Minute 22",
-        label: "Their exact language lands in the transcript.",
+        label: "Their exact capacity problem lands in the transcript.",
         scene: "demo",
         visual: {
           kind: "live-transcript",
           timestamp: "14:31",
-          speaker: "Priya",
-          quote: "We stitch APM and logs together every time there is a Sev-2.",
-          signals: ["Sev-2", "APM + Logs"],
+          speaker: "Maya",
+          quote:
+            "Our rebuild window is over 24 hours, and the next hall needs more usable petabytes per rack.",
+          signals: ["24-hour rebuild", "Capacity per rack"],
         },
       },
       {
         when: "Minute 31",
-        label: "Grok maps it to product and rewrites the open deck.",
+        label: "Grok maps the need to Seagate products and rewrites the deck.",
         scene: "notes",
         visual: {
           kind: "deck-update",
           eyebrow: "Their words",
-          headline: "A Sev-2 is a stitching problem",
-          product: "Start with APM + Logs",
+          headline: "More capacity, less rebuild exposure",
+          product: "Qualify Exos now. Map HAMR next.",
           status: "3 slides updated",
         },
       },
@@ -172,32 +179,32 @@ export const JOBS: CroJob[] = [
         when: "Minute 35",
         label: "Present the new slides before the call ends.",
         scene: "deck",
-        slides: ACME_TAIL_SLIDES,
+        slides: ASTER_PEAK_TAIL_SLIDES,
       },
     ],
     unlock:
-      "Hyper-personalized discovery on the slide, plus a tailored product next step, while they are still on.",
+      "Discovery appears on the slide with a practical product next step while the customer is still on the call.",
     outcome:
-      "One live call becomes a customer-specific deck — before the call ends.",
+      "One live storage call becomes a customer-specific deck before the call ends.",
     clips: ["03-slides-granola"],
     demo: {
       title: "Room Ops",
-      subtitle: "Live discovery · slides in their words",
+      subtitle: "Live storage discovery · slides in their words",
       participants: [
         { id: "you", name: "You", role: "you" },
         {
           id: "room",
           name: "Room Ops",
           role: "bot",
-          persona: "Turns live discovery into slides that wow this room",
-          color: "#34C759",
+          persona: "Turns live storage discovery into slides for this account",
+          color: "#6EBE49",
         },
         {
           id: "slides",
           name: "Slides",
           role: "bot",
-          persona: "Maps what they just said to a product suggestion for this team",
-          color: "#007AFF",
+          persona: "Maps capacity and qualification needs to Seagate products",
+          color: "#168C80",
         },
       ],
       messages: [
@@ -205,19 +212,19 @@ export const JOBS: CroJob[] = [
           id: "m1",
           from: "room",
           kind: "routine",
-          body: "Customer call started. I am following Granola and watching for their language, blockers, and product signals. The open deck stays untouched until there is something worth changing.",
+          body: "Aster Peak's call started. I am following Granola for capacity, rebuild, archive, and drive-qualification signals. I will only change the deck when the customer says something useful.",
         },
         {
           id: "m2",
           from: "room",
           kind: "text",
-          body: "Priya just named the Sev-2 and the security bar in her words. Mapping both to the last slides now while the call is still live.",
+          body: "Maya named a rebuild window over 24 hours and a need for more usable petabytes per rack. I am mapping both points to the last slides now.",
         },
         {
           id: "m3",
           from: "room",
           kind: "text",
-          body: "Still on. Granola 14:31. Their discovery is the slide. Sev-2 and the security bar in their words, then the product that fits this team. They should feel known, not pitched.",
+          body: "Still on the call. Their discovery is now the slide. The next step is an Exos qualification against their current chassis, with the HAMR path tied to the next refresh.",
         },
         {
           id: "m4",
@@ -227,7 +234,7 @@ export const JOBS: CroJob[] = [
           artifact: {
             kind: "slides",
             title: "What we heard",
-            cards: ACME_TAIL_SLIDES,
+            cards: ASTER_PEAK_TAIL_SLIDES,
           },
         },
         {
@@ -237,24 +244,24 @@ export const JOBS: CroJob[] = [
           draftLabel: "One-pager they can forward",
           artifact: {
             kind: "one-pager",
-            title: "Acme one-pager",
+            title: "Aster Peak one-pager",
             eyebrow: "One-pager",
             sections: [
               {
-                heading: "What we covered",
-                body: "Start with APM + Logs. Security needs SSO and an audit trail. Bits AI as a one-team trial, not a company-wide rollout.",
+                heading: "What we heard",
+                body: "Rebuilds run longer than 24 hours. The next hall needs more usable petabytes per rack. Archive cost is under review.",
               },
               {
-                heading: "Security path",
-                body: "SSO and audit trail named before any extra products. The security lead from this call stays on the next meeting.",
+                heading: "Qualification",
+                body: "Test Exos in the current chassis against rebuild time, error handling, and usable-capacity targets.",
               },
               {
-                heading: "Trial",
-                body: "Bits AI in the same team that starts APM + Logs. Week-3 time-to-fix is the gate. Add seats only after that number.",
+                heading: "Capacity path",
+                body: "Confirm today's Exos fit, then map HAMR options to the next refresh. Keep the first test narrow.",
               },
               {
-                heading: "What we need from you",
-                body: "Tuesday with your contact plus a security co-owner. Bring the contract owner if legal will slow SSO.",
+                heading: "Next meeting",
+                body: "Bring storage engineering and procurement. Agree on the test chassis, drive count, success criteria, and timing.",
               },
             ],
           },
@@ -266,27 +273,27 @@ export const JOBS: CroJob[] = [
           draftLabel: "Note they can send inside",
           artifact: {
             kind: "packet",
-            title: "Forward this inside Acme",
+            title: "Forward this inside Aster Peak",
             fields: [
               {
                 label: "Problem in their words",
                 value:
-                  "We cannot tell a Sev-2 story across APM and logs without stitching tools, and security will not let another agent in without SSO and an audit trail.",
+                  "Our rebuild window is over 24 hours, and the next hall needs more usable petabytes per rack.",
               },
               {
                 label: "Why now",
                 value:
-                  "The team already agreed to start APM + Logs. Bits AI is useful in that same week-3 window, not after a product tour next quarter.",
+                  "The next capacity buy starts this quarter. The team needs a qualified drive before procurement locks the fourth-quarter order.",
               },
               {
-                label: "Risks already named",
+                label: "What to test",
                 value:
-                  "SSO + audit trail. Legal may slow the contract. Cost came up once and is not in this ask. RUM is not in the room.",
+                  "Exos in the current chassis. Measure rebuild time, usable capacity, and the operational steps needed for qualification.",
               },
               {
-                label: "Exact ask for next Tuesday",
+                label: "Exact ask for Tuesday",
                 value:
-                  "30 minutes. Your contact + a security co-owner. Dated SSO path. Written Bits AI trial scope for one team.",
+                  "Thirty minutes with storage engineering and procurement. Confirm chassis, drive count, test owner, and acceptance criteria.",
               },
             ],
           },
@@ -299,16 +306,16 @@ export const JOBS: CroJob[] = [
           artifact: {
             kind: "gmail",
             title: "Forward to your contact",
-            to: "Acme contact",
-            subject: "Acme / Datadog. Tuesday packet (SSO, Bits AI trial)",
-            body: "Forwarding the internal note from today's room. Problem is in your words. Tuesday ask is your contact + a security co-owner, a dated SSO path, and a one-team Bits AI trial. Nothing else is in the ask.",
+            to: "Aster Peak contact",
+            subject: "Aster Peak / Seagate. Exos qualification plan",
+            body: "I captured the rebuild and rack-density points from today's call. The next step is a focused Exos qualification in your current chassis. For Tuesday, can we bring storage engineering and procurement to confirm drive count, test owner, and acceptance criteria?",
           },
         },
         {
           id: "m8",
           from: "room",
           kind: "system",
-          body: "Nothing sent. Deck, one-pager, note, and Gmail stay drafts until you tap Send.",
+          body: "Nothing sent. The deck, one-pager, internal note, and Gmail stay as drafts until you tap Send.",
         },
       ],
     },
@@ -316,55 +323,55 @@ export const JOBS: CroJob[] = [
   {
     id: "legal-redlines",
     number: 2,
-    title: "Find product and internal answers fast",
-    trigger: "A customer question lands",
-    backgroundAction: "Searching product knowledge + internal company context",
+    title: "Answer procurement questions overnight",
+    trigger: "A procurement email lands overnight",
+    backgroundAction: "Checking order + product + supply context",
     problem:
-      "A customer question can turn into a week of Slack across product, billing, finance, and legal. The seller waits, the customer waits, and internal experts lose time repeating answers.",
+      "A drive order can raise questions about invoice quantities, qualified firmware, delivery lots, and cloud options. The rep should not spend a day chasing each answer.",
     botJob:
-      "Grok Bot watches for the question, searches product knowledge and internal company context, and drafts a sourced reply. The seller reviews instead of chasing teams.",
+      "Grok Bot checks the order desk, product matrix, supply plan, and approved commercial guidance. It drafts the answers it can support and holds anything that needs a human decision.",
     storyboard: [
       {
         when: "5:27am your time",
-        label: "Four questions land. Grok starts while you are asleep.",
+        label: "Four order questions land. Grok starts while you are asleep.",
         scene: "notes",
         visual: {
           kind: "procurement-email",
-          sender: "Jordan · Acme procurement",
-          subject: "Questions on INV-0080 + 0081",
+          sender: "Jordan · Aster Peak procurement",
+          subject: "Questions on PO-1847 + INV-2281",
           questions: 4,
         },
       },
       {
         when: "7:42am",
-        label: "Grok has already found and checked every answer.",
+        label: "Grok has checked the internal source for each answer.",
         scene: "inspect",
         visual: {
           kind: "answers-found",
           sources: [
-            { name: "Billing", answer: "Catch-up explained" },
-            { name: "Finance", answer: "Proration checked" },
-            { name: "Packaging", answer: "Limits confirmed" },
+            { name: "Order desk", answer: "Invoice quantity checked" },
+            { name: "Product matrix", answer: "Qualification match checked" },
+            { name: "Supply planning", answer: "Delivery lots checked" },
           ],
-          status: "4 / 4 answered",
+          status: "3 answered · 1 held",
         },
       },
       {
         when: "7:44am",
-        label: "A sourced reply is waiting for one-click approval.",
+        label: "A sourced reply is waiting for approval.",
         scene: "send",
         visual: {
           kind: "reply-ready",
           to: "Jordan Hale",
-          subject: "INV-0080 + 0081 · answers",
+          subject: "PO-1847 + INV-2281 · answers",
           status: "Ready to approve",
         },
       },
     ],
     unlock:
-      "Invoice questions in. A sendable draft out. No week of internal delay.",
+      "Order questions arrive overnight. A checked draft is ready before the rep opens Gmail.",
     outcome:
-      "Grok finds the product and internal context, then drafts the answer — no Slack chase and no seller time wasted.",
+      "Grok checks product and order context overnight, then drafts the reply and flags the one open decision.",
     clips: ["01-morning-inbox"],
     demo: {
       title: "Paper",
@@ -375,8 +382,8 @@ export const JOBS: CroJob[] = [
           id: "paper",
           name: "Paper",
           role: "bot",
-          persona: "Reads overnight procurement mail and drafts the reply so you do not chase billing",
-          color: "#FF375F",
+          persona: "Checks overnight order questions and drafts the reply",
+          color: "#6EBE49",
         },
       ],
       messages: [
@@ -384,20 +391,20 @@ export const JOBS: CroJob[] = [
           id: "m1",
           from: "paper",
           kind: "routine",
-          body: "New Acme procurement thread detected at 5:27am. Two invoices, four questions. Checking billing, finance, and packaging while you are offline.",
+          body: "Aster Peak procurement emailed at 5:27am with four questions about PO-1847 and INV-2281. I am checking the order desk, product matrix, and supply plan while you are offline.",
         },
         {
           id: "m2",
           from: "paper",
           kind: "text",
-          body: "Already read it overnight. Four questions. Draft is waiting. You do not need to ping billing, finance, or legal for this one. Nothing sent.",
+          body: "Three answers are supported and ready. I held the HDD and Lyve Cloud PO split because finance and procurement need to confirm the structure. Nothing has been sent.",
         },
         {
           id: "m3",
           from: "paper",
           kind: "draft",
           draftLabel: "Questions + reply",
-          artifact: ACME_PROCUREMENT,
+          artifact: ASTER_PEAK_PROCUREMENT,
         },
         {
           id: "m4",
@@ -406,10 +413,10 @@ export const JOBS: CroJob[] = [
           draftLabel: "Gmail reply · not sent",
           artifact: {
             kind: "gmail",
-            title: "Reply to Acme procurement",
-            to: ACME_PROCUREMENT.reply.to,
-            subject: ACME_PROCUREMENT.reply.subject,
-            body: ACME_PROCUREMENT.reply.body,
+            title: "Reply to Aster Peak procurement",
+            to: ASTER_PEAK_PROCUREMENT.reply.to,
+            subject: ASTER_PEAK_PROCUREMENT.reply.subject,
+            body: ASTER_PEAK_PROCUREMENT.reply.body,
           },
         },
         {
@@ -424,72 +431,74 @@ export const JOBS: CroJob[] = [
   {
     id: "attach-engine",
     number: 3,
-    title: "Pipeline generation is now easier than ever",
+    title: "Generate pipeline from storage signals",
     trigger: "A target account enters your list",
-    backgroundAction: "Researching signals + building personalized outreach",
+    backgroundAction: "Researching storage signals + drafting outreach",
     problem:
-      "Cold outbound is a generic sequence. No research, no hypothesis, no evidence, and a name from a list. Pipeline that lands starts with why this account, why now, and who would care.",
+      "Generic outbound does not earn a storage buyer's time. A useful message starts with a real capacity, cost, density, or qualification signal.",
     botJob:
-      "When an account enters your target list, Grok Bot researches it, writes a 3-why, finds evidence of the pain, names who cares, then drafts LinkedIn, email, and a page. Draft only. You send.",
+      "When an account enters the list, Grok Bot finds public storage signals, writes the 3-why, identifies the likely buyers, and drafts LinkedIn, email, and an account page. The rep decides what sends.",
     storyboard: [
       {
         when: "No meeting yet",
-        label: "Acme hits your target list. Grok starts without a prompt.",
+        label:
+          "Aster Peak enters the target list. Grok starts without a prompt.",
         scene: "inspect",
         visual: {
           kind: "account-research",
-          account: "Acme",
-          sources: ["Status page", "Careers", "Engineering"],
-          signal: "47-minute Sev-2",
+          account: "Aster Peak Compute",
+          sources: ["Capacity plan", "Procurement", "Careers"],
+          signal: "Drive qualification this quarter",
         },
       },
       {
         when: "90 seconds later",
-        label: "It turns public evidence into a sharp 3-why.",
+        label: "It turns public storage evidence into a clear 3-why.",
         scene: "notes",
         visual: {
           kind: "three-why",
           items: [
-            { label: "Why us", answer: "APM + Logs" },
-            { label: "Why now", answer: "Sev-2 · 14d ago" },
-            { label: "Why them", answer: "Own time-to-fix" },
+            { label: "Why us", answer: "Exos + Lyve Cloud fit check" },
+            { label: "Why now", answer: "30% archive growth" },
+            { label: "Why them", answer: "Own capacity + qualification" },
           ],
         },
       },
       {
         when: "Campaign ready",
-        label: "The right buyer gets three personalized drafts.",
+        label: "The right storage buyer gets three personal drafts.",
         scene: "map",
         visual: {
           kind: "outreach-ready",
-          person: "Priya Shah · VP Engineering",
-          channels: ["LinkedIn", "Email", "Acme page"],
+          person: "Maya Chen · VP Infrastructure",
+          channels: ["LinkedIn", "Email", "Aster Peak page"],
           status: "3 drafts · 0 sent",
         },
       },
       {
         when: "Ready for your click",
-        label: "Research, message, and account page — all built from their business.",
+        label:
+          "Research, message, and account page are built from their storage plan.",
         scene: "send",
-        artifact: ACME_OUTBOUND,
+        artifact: ASTER_PEAK_OUTBOUND,
       },
     ],
     unlock:
-      "Research, a 3-why, evidence, named buyers, and sendable drafts. Nothing fires until you tap.",
+      "The rep gets a storage-specific 3-why, evidence, named buyers, and personal drafts. Nothing sends without approval.",
     outcome:
-      "One account in. Research, a 3-why, named buyers, and personalized outreach out.",
+      "One target account becomes a researched storage point of view and a set of ready-to-review drafts.",
     clips: ["02-prospecting-pg"],
     demo: {
       title: "Outbound",
-      subtitle: "Research to a first meeting",
+      subtitle: "Storage research to a first meeting",
       participants: [
         { id: "you", name: "You", role: "you" },
         {
           id: "attach",
           name: "Outbound",
           role: "bot",
-          persona: "Researches the account, writes the 3-why, and drafts the outreach",
-          color: "#FF9500",
+          persona: "Finds storage signals, writes the 3-why, and drafts outreach",
+          color: "#168C80",
         },
       ],
       messages: [
@@ -497,13 +506,13 @@ export const JOBS: CroJob[] = [
           id: "m1",
           from: "attach",
           kind: "routine",
-          body: "Acme entered your target-account list. No meeting yet. Researching the account, building the 3-why, and finding the people who would feel the pain. Drafts only.",
+          body: "Aster Peak Compute entered your target-account list. I am checking capacity, archive, rack-density, and drive-qualification signals. Drafts only.",
         },
         {
           id: "m2",
           from: "attach",
           kind: "text",
-          body: "In the account. Careers, status page, engineering blog. Staff SRE JD is asking for stitching APM and logs. Status page still has a 47-minute Sev-2. Writing the 3-why from that, not from a persona.",
+          body: "Their capacity plan says archive data is growing 30% this year and sets a hyperscaler-density target for the next hall. A new data-center HDD qualification starts this quarter. The storage architect role covers tape economics and rebuild testing.",
         },
         {
           id: "m3",
@@ -512,8 +521,8 @@ export const JOBS: CroJob[] = [
           draftLabel: "3-why hypothesis",
           artifact: {
             kind: "packet",
-            title: "Acme 3-why",
-            fields: ACME_OUTBOUND.hypothesis.map((item) => ({
+            title: "Aster Peak 3-why",
+            fields: ASTER_PEAK_OUTBOUND.hypothesis.map((item) => ({
               label: item.k,
               value: item.body,
             })),
@@ -528,11 +537,11 @@ export const JOBS: CroJob[] = [
             kind: "packet",
             title: "Proof, then the people",
             fields: [
-              ...ACME_OUTBOUND.evidence.map((item) => ({
+              ...ASTER_PEAK_OUTBOUND.evidence.map((item) => ({
                 label: item.source,
                 value: item.finding,
               })),
-              ...ACME_OUTBOUND.targets.map((person) => ({
+              ...ASTER_PEAK_OUTBOUND.targets.map((person) => ({
                 label: `${person.name} · ${person.role}`,
                 value: person.why,
               })),
@@ -546,10 +555,10 @@ export const JOBS: CroJob[] = [
           draftLabel: "LinkedIn · not sent",
           artifact: {
             kind: "linkedin",
-            title: "LinkedIn to Priya Shah",
-            to: "Priya Shah",
-            role: "VP Engineering, Acme",
-            body: "Priya — your status page from 14 days ago and the Staff SRE JD say the same thing: on-call still stitches tools to name a Sev-2. 90 seconds on how APM + Logs in the platform team would have named that incident. Draft only. Nothing sent.",
+            title: "LinkedIn to Maya Chen",
+            to: "Maya Chen",
+            role: "VP Infrastructure, Aster Peak Compute",
+            body: "Maya, I saw Aster Peak's 30% archive-growth plan and the data-center HDD qualification notice. I put together a short Exos qualification outline, plus a Lyve Cloud versus tape cost check for the archive team. Worth fifteen minutes next week?",
           },
         },
         {
@@ -559,10 +568,10 @@ export const JOBS: CroJob[] = [
           draftLabel: "Gmail · not sent",
           artifact: {
             kind: "gmail",
-            title: "Email to Priya Shah",
-            to: "Priya Shah, VP Engineering",
-            subject: "Acme's last Sev-2 and the Staff SRE JD",
-            body: "Priya — the 47-minute Sev-2 and the Staff SRE posting both point at stitching APM and logs. I put a one-page note on how Datadog would start in that platform team, not a product tour. Happy to walk Chris Okonkwo through it too. Nothing else in the ask. Draft only until you tap Send.",
+            title: "Email to Maya Chen",
+            to: "Maya Chen, VP Infrastructure",
+            subject: "Aster Peak's next drive qualification",
+            body: "Maya,\n\nYour public capacity plan says archive data is growing 30% this year, and the procurement notice puts a new data-center HDD qualification in this quarter. I drafted a one-page test outline for Exos in the current chassis. I also included a simple Lyve Cloud versus tape cost check for the archive team.\n\nWould a fifteen-minute review with Luis be useful?\n\nBest,",
           },
         },
         {
@@ -572,24 +581,26 @@ export const JOBS: CroJob[] = [
           draftLabel: "Page for this account · not live",
           artifact: {
             kind: "one-pager",
-            title: ACME_OUTBOUND.page.headline,
-            eyebrow: "Page for Acme",
+            title: ASTER_PEAK_OUTBOUND.page.headline,
+            eyebrow: "Page for Aster Peak",
             sections: [
               {
                 heading: "What we saw",
                 body:
-                  ACME_OUTBOUND.evidence[0]?.finding ??
-                  "Public incident. The stitch is still the story.",
+                  ASTER_PEAK_OUTBOUND.evidence[0]?.finding ??
+                  "Archive growth and rack density are driving the next capacity plan.",
               },
               {
                 heading: "Why this team",
                 body:
-                  ACME_OUTBOUND.hypothesis.find((item) => item.k === "Why them")
-                    ?.body ?? "VP Eng owns time-to-fix.",
+                  ASTER_PEAK_OUTBOUND.hypothesis.find(
+                    (item) => item.k === "Why them",
+                  )?.body ??
+                  "Infrastructure owns capacity and storage engineering owns qualification.",
               },
               {
-                heading: "How the product maps",
-                body: ACME_OUTBOUND.page.body,
+                heading: "How Seagate maps",
+                body: ASTER_PEAK_OUTBOUND.page.body,
               },
             ],
           },
@@ -598,11 +609,11 @@ export const JOBS: CroJob[] = [
           id: "m8",
           from: "attach",
           kind: "system",
-          body: "Nothing sent. LinkedIn, Gmail, and the page stay drafts until you tap Send.",
+          body: "Nothing sent. LinkedIn, Gmail, and the account page stay as drafts until you tap Send.",
         },
       ],
     },
-  }
+  },
 ];
 
 export function getJob(id: string): CroJob | undefined {

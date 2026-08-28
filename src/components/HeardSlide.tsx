@@ -10,8 +10,8 @@ export function HeardSlide({
 }) {
   return (
     <div className={`leave leave-heard size-${size}`}>
-      <article className="heard-slide datadog-usecase-slide">
-        <header className="datadog-slide-header">
+      <article className="heard-slide seagate-usecase-slide">
+        <header className="seagate-slide-header">
           <p>Sample agent teammates for Seagate GTM</p>
           <h3>Six examples of work Grok Bot can own for Seagate.</h3>
           <span>
@@ -19,7 +19,7 @@ export function HeardSlide({
             agent job.
           </span>
         </header>
-        <div className="datadog-usecase-grid">
+        <div className="seagate-usecase-grid">
           {AGENT_TEAMMATES.map((item) => (
             <section key={item.title}>
               <p>{item.stage}</p>

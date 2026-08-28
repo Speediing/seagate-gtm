@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:copy": "node scripts/audit-seagate-copy.mjs"
   },
   "dependencies": {
     "geist": "^1.7.2",

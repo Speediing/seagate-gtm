@@ -37,7 +37,7 @@ const gmail = { id: "gmail", host: "mail.google.com", label: "Gmail" };
 const gong = { id: "gong", host: "app.gong.io", label: "Gong" };
 const sfdc = {
   id: "sfdc",
-  host: "datadog.lightning.force.com",
+  host: "seagate.lightning.force.com",
   label: "Salesforce",
 };
 const sheets = {
@@ -52,31 +52,35 @@ const linkedin = {
   host: "www.linkedin.com",
   label: "LinkedIn",
 };
-const web = { id: "web", host: "acme.com", label: "Acme" };
+const web = {
+  id: "web",
+  host: "asterpeak.example",
+  label: "Aster Peak",
+};
 
 export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
   "standardize-room": {
     m1: {
       pill: "Opening Granola",
       host: "granola.app",
-      path: "/notes/acme-datadog",
-      title: "Acme <> Datadog",
+      path: "/notes/aster-peak-seagate",
+      title: "Aster Peak <> Seagate",
       site: "granola",
       tabs: [granola, figma, gmail],
     },
     m2: {
       pill: "In Granola",
       host: "granola.app",
-      path: "/notes/acme-datadog",
-      title: "Acme <> Datadog",
+      path: "/notes/aster-peak-seagate",
+      title: "Aster Peak <> Seagate",
       site: "granola",
       tabs: [granola, figma, gmail],
     },
     m3: {
       pill: "Pulling Granola, still on the call",
       host: "granola.app",
-      path: "/notes/acme-datadog",
-      title: "Acme <> Datadog",
+      path: "/notes/aster-peak-seagate",
+      title: "Aster Peak <> Seagate",
       site: "clip",
       clip: "03-slides-granola",
       tabs: [granola, figma, gmail],
@@ -84,23 +88,23 @@ export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
     m4: {
       pill: "Writing their discovery into the deck",
       host: "figma.com",
-      path: "/file/acme-next-meeting",
-      title: "Acme next meeting",
+      path: "/file/aster-peak-next-meeting",
+      title: "Aster Peak next meeting",
       site: "figma",
       tabs: [granola, figma, gmail],
     },
     m5: {
       pill: "Drafting the one-pager",
       host: "figma.com",
-      path: "/file/acme-leave-behind",
-      title: "Acme one-pager",
+      path: "/file/aster-peak-leave-behind",
+      title: "Aster Peak one-pager",
       site: "figma",
       tabs: [granola, figma, gmail],
     },
     m6: {
       pill: "Building the inside note",
       host: "figma.com",
-      path: "/file/acme-champion-packet",
+      path: "/file/aster-peak-champion-packet",
       title: "Inside note",
       site: "figma",
       tabs: [granola, figma, gmail],
@@ -143,8 +147,8 @@ export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
     m3: {
       pill: "Drafting the morning reply, not sent",
       host: "docs.google.com",
-      path: "/document/d/acme-invoices",
-      title: "Acme invoices INV-0080 · INV-0081",
+      path: "/document/d/aster-peak-order",
+      title: "Aster Peak PO-1847 · INV-2281",
       site: "gdoc",
       tabs: [gmail, gdoc],
     },
@@ -168,17 +172,17 @@ export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
   "attach-engine": {
     m1: {
       pill: "Researching the account",
-      host: "acme.com",
-      path: "/careers/staff-sre",
-      title: "Staff SRE · Observability",
+      host: "asterpeak.example",
+      path: "/infrastructure/capacity-plan",
+      title: "2027 capacity plan",
       site: "research",
       tabs: [web, gdoc, linkedin, gmail],
     },
     m2: {
       pill: "Pulling public evidence of the pain",
-      host: "acme.com",
-      path: "/status",
-      title: "Acme status",
+      host: "asterpeak.example",
+      path: "/procurement/storage",
+      title: "Aster Peak storage procurement",
       site: "clip",
       clip: "02-prospecting-pg",
       tabs: [web, gdoc, linkedin, gmail],
@@ -186,16 +190,16 @@ export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
     m3: {
       pill: "Writing the 3-why hypothesis",
       host: "docs.google.com",
-      path: "/document/d/acme-3-why",
-      title: "Acme 3-why",
+      path: "/document/d/aster-peak-3-why",
+      title: "Aster Peak 3-why",
       site: "gdoc",
       tabs: [web, gdoc, linkedin, gmail],
     },
     m4: {
       pill: "Naming who would care",
       host: "docs.google.com",
-      path: "/document/d/acme-3-why",
-      title: "Acme 3-why",
+      path: "/document/d/aster-peak-3-why",
+      title: "Aster Peak 3-why",
       site: "gdoc",
       tabs: [web, gdoc, linkedin, gmail],
     },
@@ -217,9 +221,9 @@ export const SCREENS: Record<JobId, Record<string, ComputerBeat>> = {
     },
     m7: {
       pill: "Building a page for this account",
-      host: "acme.datadoghq.dev",
-      path: "/acme-sev2",
-      title: "For Acme platform",
+      host: "aster-peak.seagate-demo.example",
+      path: "/storage-plan",
+      title: "For Aster Peak infrastructure",
       site: "page",
       tabs: [web, gdoc, linkedin, gmail],
     },
