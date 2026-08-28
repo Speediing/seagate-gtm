@@ -7,7 +7,7 @@
   --surface: #fbf9f4;
   --line: #d8d3c8;
   --accent: #6ebe49;
-  --accent-dark: #4f8834;
+  --accent-dark: #3d6b28;
   --sage: #788274;
   --blue: #5e7180;
   --bg: var(--paper);
@@ -1465,8 +1465,11 @@ button:active:not(:focus-visible),
 
 .heard-slide.datadog-usecase-slide {
   aspect-ratio: auto;
-  min-height: 28rem;
   overflow: visible;
+}
+
+.leave-heard.size-lg .heard-slide.datadog-usecase-slide {
+  min-height: 28rem;
 }
 
 .heard-slide img {
@@ -5736,6 +5739,14 @@ button:active:not(:focus-visible),
 .hero-phone-composer>span:last-child svg{width:.72rem;height:.72rem}
 
 @keyframes hero-demo-enter{0%{opacity:0;transform:translateY(1.4rem) rotate(2deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+
+@keyframes hero-phone-work{0%,8%{opacity:0;transform:translateY(.7rem)}18%,to{opacity:1;transform:translateY(0)}}
+
+@keyframes hero-phone-message{0%,36%{opacity:0;transform:translateY(.5rem)}47%,to{opacity:1;transform:translateY(0)}}
+
+@keyframes hero-phone-reply{0%,57%{opacity:0;transform:translateY(.5rem)}68%,to{opacity:1;transform:translateY(0)}}
+
+@keyframes agent-pulse{0%{box-shadow:0 0 #5bc98b6b}70%,to{box-shadow:0 0 0 .42rem #5bc98b00}}
 
 @media (prefers-reduced-motion:reduce){
 .hero-bot-demo,.hero-phone-header small span,.hero-phone-message,.hero-phone-work,.hero-phone-work-label span{animation:none}
