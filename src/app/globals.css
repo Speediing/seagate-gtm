@@ -342,7 +342,7 @@ button:active:not(:focus-visible),
 
 .brand-dd {
   height: var(--brand-h);
-  transform: translateY(-8%);
+  transform: translateY(12%);
 }
 
 .brand-sxai {
