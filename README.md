@@ -1,6 +1,6 @@
 # Grok Bot for Seagate sales
 
-Passworded site. Grok Bot from SpaceXAI. This is the Seagate retarget of Speediing/datadog-cro@f22d68f.
+Passworded site. Grok Bot from SpaceXAI. Seagate restyle of the Datadog grokbot leave-behind (`datadog-grokbot.vercel.app`, Speediing/datadog-cro@f22d68f). Lockup is SpaceX × Seagate.
 
 ## What it is
 

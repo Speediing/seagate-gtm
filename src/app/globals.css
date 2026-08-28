@@ -317,7 +317,7 @@ button:active:not(:focus-visible),
 .brand-lockup {
   --dd-h: 36px;
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.4rem;
   min-width: 0;
   color: var(--ink);
@@ -341,7 +341,6 @@ button:active:not(:focus-visible),
 .brand-sxai {
   height: calc(var(--dd-h) * 0.58);
   max-width: calc(var(--dd-h) * 4.8);
-  margin-top: calc(var(--dd-h) * 0.2);
   filter: brightness(0);
 }
 
