@@ -8,8 +8,8 @@ export function BrandLockup({
     <div className={`brand-lockup brand-lockup-${size}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/datadog-wordmark.svg"
-        alt="Datadog"
+        src="/brand/seagate-wordmark.svg"
+        alt="Seagate"
         className="brand-dd"
       />
       <span className="brand-times" aria-hidden>

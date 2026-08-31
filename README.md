@@ -1,10 +1,10 @@
-# Grok Bot for Datadog GTM
+# Grok Bot for Seagate sales
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
+Passworded Seagate sales leave-behind for Grok Bot from SpaceXAI. The page uses Seagate storage stories and artwork while keeping the established hero, phone mock, three jobs, six-agent band, comparison, and six public testimonials. The lockup is Seagate × SpaceXAI.
 
 ## What it is
 
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+Three Seagate GTM jobs on one page. The stories use Aster Peak Compute, a fictional account, to cover a live Exos deck update, overnight drive-order questions, and outbound built from storage signals. Each job has an interactive Grok Bot demo and the matching Krista Letz clip. The existing comparison and public Grok Bot quote wall remain unchanged.
 
 ## Run locally
 
@@ -28,4 +28,4 @@ gh release download krista-gtm-clips-720p-2026-08-26 \
 
 ## Deploy
 
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
+Preview only. Jason preview-deploys under the `jasonwiker` Vercel team, project name `seagate-gtm`. Set `SITE_PASSWORD=land2expand`. Do not run `vercel --prod`. Do not promote to a public production domain until Jason says so.

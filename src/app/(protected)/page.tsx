@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { CompareTable } from "@/components/CompareTable";
-import { HeroTelemetry } from "@/components/HeroTelemetry";
+import { HeroDemo } from "@/components/HeroDemo";
 import { JobSection } from "@/components/JobSection";
 import { QuoteWall } from "@/components/QuoteWall";
 import { SiteNav } from "@/components/SiteNav";
@@ -9,52 +10,47 @@ export default function HomePage() {
   return (
     <main id="top">
       <div className="hero-watercolor">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           className="hero-watercolor-image"
-          src="/brand/watercolor-pad.png"
+          src="/brand/watercolor-pad.webp"
           alt=""
+          width={1280}
+          height={720}
+          sizes="100vw"
+          priority
+          unoptimized
         />
         <SiteNav />
       </div>
 
       <div className="report">
         <div className="report-hero">
-          <HeroTelemetry />
           <section className="hero">
-            <div>
-              <p className="eyebrow">A proactive agent for every Datadog rep</p>
-              <h1>The agents that work while your reps sell.</h1>
-              <p className="hero-intro">
-                Grok Bot listens to calls, watches the inbox, and researches
-                accounts in the background. Work triggers it — not another
-                prompt.
-              </p>
-            </div>
+            <HeroDemo />
           </section>
 
           <section className="usecase-framing">
             <p className="eyebrow">Three sample use cases</p>
             <h2>
-              Grok Bot gives every seller their own fleet of always-available
-              agent teammates. Anything your sellers do today can be done
-              through Grok Bot.
+              Grok Bot gives every Seagate seller a fleet of always-available
+              agent teammates for the work around each storage deal.
             </h2>
-            <p>These are three examples from millions — not the boundary.</p>
+            <p>
+              These three examples cover live calls, overnight questions, and
+              new pipeline. They are not the limit.
+            </p>
           </section>
 
           <div className="metric-grid">
             {JOBS.map((job) => (
-              <a
-                key={job.id}
-                className="metric-card"
-                href={`#${job.id}`}
-              >
+              <a key={job.id} className="metric-card" href={`#${job.id}`}>
                 <div className="metric-card-top">
                   <p>Sample {String(job.number).padStart(2, "0")}</p>
                 </div>
                 <h2>{job.title}</h2>
-                <p className="metric-trigger">Starts when {job.trigger.toLowerCase()}</p>
+                <p className="metric-trigger">
+                  Starts when {job.trigger.toLowerCase()}
+                </p>
               </a>
             ))}
           </div>
@@ -69,7 +65,7 @@ export default function HomePage() {
 
       <div className="orbit-break" aria-hidden>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/watercolor-orbit.png" alt="" />
+        <img src="/brand/watercolor-orbit.webp" alt="" />
       </div>
 
       <div className="report">
@@ -79,11 +75,11 @@ export default function HomePage() {
 
       <footer className="site-footer">
         <div>
-          <p className="footer-title">Cursor for Datadog</p>
-          <p>Grok Bot for Datadog sales</p>
+          <p className="footer-title">Cursor for Seagate</p>
+          <p>Grok Bot for Seagate sales</p>
         </div>
         <address className="footer-contact">
-          <p>Datadog&apos;s existing Cursor contact</p>
+          <p>Seagate&apos;s existing Cursor contact</p>
           <strong>Madeline Ingleby</strong>
           <a href="mailto:madeline.ingleby@cursor.com">
             madeline.ingleby@cursor.com

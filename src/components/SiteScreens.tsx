@@ -1,7 +1,7 @@
 import type { Artifact, DemoMessage, SlideCard } from "@/data/types";
 import type { ComputerBeat } from "@/data/screens";
 import { CLIPS } from "@/data/clips";
-import { ACME_TAIL_SLIDES } from "@/data/jobs";
+import { ASTER_PEAK_TAIL_SLIDES } from "@/data/jobs";
 import { HeardSlide } from "./HeardSlide";
 
 function asSlides(artifact?: Artifact) {
@@ -135,26 +135,27 @@ function GranolaScreen({ account }: { account: string }) {
       <p className="site-time">Still on the call · Granola in</p>
       <ul>
         <li>
-          <span>14:12</span> Start with APM + Logs in one team. Not a product
-          tour.
+          <span>14:12</span> Rebuild window is over 24 hours in the current
+          chassis.
         </li>
         <li>
-          <span>14:18</span> Security: SSO and an audit trail before any extra
-          products.
+          <span>14:18</span> Next hall needs more usable petabytes per rack.
         </li>
         <li>
-          <span>14:21</span> Soft yes on a Bits AI trial if those two are named.
+          <span>14:21</span> Storage engineering can run an Exos qualification
+          this quarter.
         </li>
         <li>
-          <span>14:24</span> Cost mentioned once. RUM not in the room.
+          <span>14:24</span> Archive team is comparing another tape cycle with
+          HDD and Lyve Cloud.
         </li>
         <li>
-          <span>14:28</span> Your contact will take a Tuesday with a security
-          co-owner.
+          <span>14:28</span> Procurement will join Tuesday to confirm drive
+          count and timing.
         </li>
         <li>
-          <span>14:31</span> Use cases named live on the demo. Sev-2 story,
-          one team, SSO as the gate.
+          <span>14:31</span> Start with today&apos;s Exos test. Map HAMR
+          options to the next refresh.
         </li>
       </ul>
     </div>
@@ -171,7 +172,7 @@ function FigmaScreen({
   const slides = asSlides(artifact);
   const packet = artifact?.kind === "packet" ? artifact : null;
   const pager = asOnePager(artifact);
-  const cards: SlideCard[] = slides?.cards ?? ACME_TAIL_SLIDES;
+  const cards: SlideCard[] = slides?.cards ?? ASTER_PEAK_TAIL_SLIDES;
 
   return (
     <div className="site site-figma">
@@ -227,10 +228,10 @@ function GongScreen({ account }: { account: string }) {
       <div className="gong-recap">
         <h4>Call recap</h4>
         <ul>
-          <li>They have APM + Logs</li>
-          <li>Security lead in the room</li>
-          <li>Cost mentioned once</li>
-          <li>No one who can sign was on the call</li>
+          <li>Rebuild window is over 24 hours</li>
+          <li>More usable petabytes per rack needed</li>
+          <li>Exos qualification can start this quarter</li>
+          <li>Procurement joins the next meeting</li>
         </ul>
       </div>
     </div>
@@ -251,20 +252,20 @@ function SfdcAccountScreen({ account }: { account: string }) {
       </div>
       <dl className="sfdc-fields">
         <div>
-          <dt>Has now</dt>
-          <dd>APM + Logs</dd>
+          <dt>Capacity need</dt>
+          <dd>More usable PB per rack</dd>
         </div>
         <div>
-          <dt>Security lead</dt>
-          <dd>In first meeting</dd>
+          <dt>Rebuild window</dt>
+          <dd>Over 24 hours</dd>
         </div>
         <div>
-          <dt>Cost</dt>
-          <dd>Mentioned once</dd>
+          <dt>Qualification</dt>
+          <dd>Current chassis</dd>
         </div>
         <div>
-          <dt>Who can sign</dt>
-          <dd>Not confirmed</dd>
+          <dt>Procurement</dt>
+          <dd>Joining next meeting</dd>
         </div>
       </dl>
       <table className="sfdc-related">
@@ -278,24 +279,24 @@ function SfdcAccountScreen({ account }: { account: string }) {
         </thead>
         <tbody>
           <tr>
-            <td>Bits AI</td>
-            <td>Platform eng manager</td>
-            <td>Day 15 to 45</td>
+            <td>Exos</td>
+            <td>Storage engineering</td>
+            <td>This quarter</td>
           </tr>
           <tr>
-            <td>Cloud SIEM</td>
-            <td>Security lead</td>
-            <td>Day 15 to 45</td>
+            <td>HAMR path</td>
+            <td>Infrastructure</td>
+            <td>Next refresh</td>
           </tr>
           <tr>
-            <td>Cost</td>
-            <td>FinOps alias</td>
-            <td>Day 45 to 90</td>
+            <td>Lyve Cloud</td>
+            <td>Archive team</td>
+            <td>Cost review</td>
           </tr>
           <tr>
-            <td>RUM</td>
-            <td>Frontend guild</td>
-            <td>Day 45 to 90</td>
+            <td>IronWolf</td>
+            <td>Remote lab NAS</td>
+            <td>Later phase</td>
           </tr>
         </tbody>
       </table>
@@ -341,8 +342,8 @@ function SfdcOppScreen({
           <dd>Likes us · weak map</dd>
         </div>
         <div className={highlight ? "gap" : undefined}>
-          <dt>Cloud SIEM</dt>
-          <dd>Not in the story</dd>
+          <dt>Drive qualification</dt>
+          <dd>Test owner not named</dd>
         </div>
       </dl>
     </div>
@@ -360,15 +361,15 @@ function SheetsScreen({
   const rows = table
     ? table.rows
     : [
-        [account, "Inside contact", "Signer TBD", "APM + Logs", "Tue SIEM"],
-        ["Globex", "VP Eng", "CISO", "APM + Logs", "First meeting"],
-        ["Initech", "SRE lead", "CTO", "APM + Logs", "Bits AI"],
-        ["Umbrella", "Sec eng", "CISO", "APM + Logs", "Open source drill"],
-        ["Hooli", "Platform", "Signer TBD", "APM + Logs", "Cost later"],
+        [account, "Maya Chen", "Luis Romero", "Exos", "Chassis test"],
+        ["Cedar Forge", "IT director", "NAS lead", "IronWolf", "Rebuild plan"],
+        ["Morrow Lake", "Infra VP", "Archive lead", "Lyve Cloud", "Cost check"],
+        ["Silver Basin", "Storage VP", "Lab lead", "Exos", "Firmware list"],
+        ["Pine Arc", "Infra director", "Buyer TBD", "HAMR", "Refresh timing"],
       ];
   const cols = table
     ? table.columns
-    : ["Account", "Inside contact", "Who can sign", "Start with", "Next"];
+    : ["Account", "Inside contact", "Technical owner", "Start with", "Next"];
 
   return (
     <div className="site site-sheets">
@@ -421,7 +422,7 @@ function GmailScreen({
       </p>
       <p>
         <span>Subject</span>
-        {artifact?.subject || `${account} / Datadog`}
+        {artifact?.subject || `${account} / Seagate`}
       </p>
       <div>{artifact?.body || "Draft parked here until you tap Send?"}</div>
     </div>
@@ -472,7 +473,7 @@ function GdocScreen({
           {forecast
             ? `${account} forecast`
             : talks
-              ? "Bits AI talk tracks"
+              ? "Storage talk tracks"
               : packet
                 ? packet.title
                 : onePager?.title || `${account} brief`}
@@ -520,20 +521,20 @@ function ResearchScreen({ account }: { account: string }) {
       <p className="site-time">Researching the account · not a sequence</p>
       <ul>
         <li>
-          <span>Status</span> Sev-2, 14 days ago. 47 minutes to name the failing
-          service. Postmortem still says they jumped three tools.
+          <span>Capacity</span> Archive data is expected to grow 30% this year.
+          The next hall needs more usable petabytes per rack.
         </li>
         <li>
-          <span>Careers</span> Staff SRE JD: experience stitching APM and logs
-          across teams. Posted this month.
+          <span>Procurement</span> A new data-center HDD qualification starts
+          this quarter.
         </li>
         <li>
-          <span>Blog</span> We outgrew homegrown dashboards. No named
-          replacement.
+          <span>Careers</span> Storage architect role covers tape economics,
+          drive qualification, and rebuild testing.
         </li>
         <li>
-          <span>Org</span> VP Eng owns time-to-fix. Platform director sits on
-          that stitch.
+          <span>Org</span> VP Infrastructure owns capacity. Storage engineering
+          owns qualification.
         </li>
       </ul>
     </div>
@@ -557,7 +558,7 @@ function LinkedInScreen({
       </header>
       <p>
         <span>To</span>
-        {artifact?.to || `${account} VP Eng`}
+        {artifact?.to || `${account} VP Infrastructure`}
         {artifact?.role ? ` · ${artifact.role}` : ""}
       </p>
       <div>{artifact?.body || "InMail parked here until you tap Send."}</div>
