@@ -829,6 +829,53 @@ button {
   font-size: 0.6rem;
 }
 
+.fact-card.is-measure .fact-meta span:first-child {
+  color: var(--ink);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+.fact-measures {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact-measures li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--bot-gray);
+}
+
+.fact-measures li:first-child {
+  border-top: 0;
+}
+
+.fact-measures span {
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.fact-measures i {
+  flex: none;
+  padding: 0.2rem 0.5rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: 999px;
+  color: var(--bot-muted);
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  font-style: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .fact-outcome {
   margin: 0;
   color: var(--ink);

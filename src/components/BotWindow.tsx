@@ -185,6 +185,20 @@ export function BotWindow({ job }: { job: InterJob }) {
             {job.cards.map((card, index) => (
               <Card key={index} card={card} />
             ))}
+            <section className="fact-card is-measure">
+              <p className="fact-meta">
+                <span>What to count</span>
+                <span>Measure, not measured</span>
+              </p>
+              <ul className="fact-measures">
+                {job.measures.map((measure) => (
+                  <li key={measure}>
+                    <span>{measure}</span>
+                    <i aria-label="Inter's number, not given">Inter&apos;s number</i>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
         </aside>
       </div>

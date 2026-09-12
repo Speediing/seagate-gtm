@@ -34,7 +34,9 @@ export default function HomePage() {
           <h2>Each one is a Bot with a job. Named on the call, not invented here.</h2>
           <p>
             Where Inter did not give a store, a price, a figure, a task, or a
-            name, the page says so instead of filling the gap.
+            name, the page says so instead of filling the gap. Each job shows
+            the outcome, the steps, and what to count, so the value is
+            quantified with Inter&apos;s own numbers, not ours.
           </p>
         </section>
 

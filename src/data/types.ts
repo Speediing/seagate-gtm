@@ -63,6 +63,8 @@ export type InterJob = {
   outcome: string;
   /** The job end to end, from the ask to the handoff. */
   steps: Step[];
+  /** What to count to quantify the job. Inter's numbers stay blank until Inter gives them. */
+  measures: string[];
   thread: ThreadMessage[];
   cards: FactCard[];
   caption?: string;

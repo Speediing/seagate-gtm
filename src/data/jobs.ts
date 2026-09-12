@@ -41,6 +41,11 @@ export const JOBS: InterJob[] = [
         detail: "Order, payment, and insurance in one card for the customer to confirm. No confirmation is faked.",
       },
     ],
+    measures: [
+      "Customer asks finished inside InterBot, no handoff to a person",
+      "Products attached per ask. Here, three on one ask",
+      "Time from the ask to the customer's confirmation",
+    ],
     thread: [
       { from: "you", text: "Buy some beer for next week." },
       {
@@ -99,6 +104,11 @@ export const JOBS: InterJob[] = [
         label: "Hands back the report",
         detail: "Delivered in the thread, ready to forward. The IDE stays closed.",
       },
+    ],
+    measures: [
+      "Questions answered from the lake per week without an analyst",
+      "Time from question to report in the thread",
+      "Analyst hours freed from ad hoc report requests",
     ],
     thread: [
       {
@@ -169,6 +179,11 @@ export const JOBS: InterJob[] = [
         label: "Presents it",
         detail: "Hands the pack to the CFO and stays in the thread for questions.",
       },
+    ],
+    measures: [
+      "Teams served by the same Vic",
+      "FinOps hours per month spent answering AWS cost questions",
+      "Days from month close to the CFO report",
     ],
     thread: [
       {
@@ -244,6 +259,11 @@ export const JOBS: InterJob[] = [
         label: "Leaves a review list",
         detail: "The team approves in one pass. The busywork is off the desk.",
       },
+    ],
+    measures: [
+      "Hours of busywork per week off the commercial team",
+      "Routines running without a prompt",
+      "Selling hours recovered per seller",
     ],
     thread: [
       {
@@ -321,6 +341,11 @@ export const JOBS: InterJob[] = [
         detail: "Only after Inter runs it. No savings figure exists today.",
       },
     ],
+    measures: [
+      "Renewals with a drafted ask before they auto-renew",
+      "Drafts approved, edited, or declined by Guilherme",
+      "Savings, only once Inter runs it. Blank today",
+    ],
     thread: [
       {
         from: "you",
@@ -387,6 +412,11 @@ export const JOBS: InterJob[] = [
         detail: "Writes the match and the reason back for the growth team.",
       },
     ],
+    measures: [
+      "Onboarding customers matched to a campaign without a person",
+      "Time from signup to campaign enrollment",
+      "A/B result, from Inter's own test. Blank today",
+    ],
     thread: [
       {
         from: "you",
@@ -451,6 +481,11 @@ export const JOBS: InterJob[] = [
         detail: "Growth approves in the thread, then Grok Bot makes the change and logs it.",
       },
     ],
+    measures: [
+      "Budget shifts proposed and approved per week",
+      "Time from a change in acquisition cost to a proposal",
+      "Cost of acquisition against Inter's target. Blank today",
+    ],
     thread: [
       {
         from: "you",
@@ -513,6 +548,11 @@ export const JOBS: InterJob[] = [
         label: "Hands back the files",
         detail: "Sheet and extract in the thread, ready for review. Grok Bot, not Cursor.",
       },
+    ],
+    measures: [
+      "Finance requests finished without opening the IDE",
+      "Time from the ask to the file coming back",
+      "People on the finance desk running this from chat, João included",
     ],
     thread: [
       {
