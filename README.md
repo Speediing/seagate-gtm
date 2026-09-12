@@ -23,7 +23,7 @@ Open [http://localhost:3000](http://localhost:3000). Default password is `agentt
 
 ## Deploy
 
-Vercel team `jasonwiker`. Set `SITE_PASSWORD=agentteam`. Preview first. The live URL `inter-grokbot.vercel.app` is an alias; point it at a deployment only when Jason says so:
+Vercel team `jasonwiker`, project `inter-gtm`. Set `SITE_PASSWORD=agentteam`. Preview first. The live URL `inter-grokbot.vercel.app` is an alias; point it at a deployment only when Jason says so:
 
 ```bash
 vercel alias set <deployment-url> inter-grokbot.vercel.app --scope jasonwiker
