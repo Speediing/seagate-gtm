@@ -45,9 +45,12 @@ export function HeroDemo() {
   return (
     <>
       <div className="hero-copy">
-        <p className="eyebrow">Inter × SpaceXAI · September 11</p>
-        <h1>Grok Bot for Inter</h1>
-        <p className="hero-line">Eight jobs they named. One bot.</p>
+        <p className="eyebrow">Grok Bot for Inter</p>
+        <h1>
+          Eight jobs they named.
+          <br />
+          One bot.
+        </h1>
         <p className="hero-intro">
           What Inter described on September 11. João is the CEO. He did not
           speak. The work below is what Davidson Castro, Guilherme Ximenes,

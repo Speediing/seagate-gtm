@@ -10,11 +10,11 @@ export function SiteNav() {
         <a className="text-button" href="#jobs">
           Eight jobs
         </a>
-        <a className="text-button" href="#how">
-          How it works
-        </a>
         <a className="text-button" href="#who">
           Who said it
+        </a>
+        <a className="text-button" href="#line">
+          The line
         </a>
       </nav>
     </header>

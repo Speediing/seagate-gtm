@@ -2,20 +2,23 @@
 
 /* Inter × SpaceXAI. Editorial page, Grok Bot product chrome. */
 :root {
-  --ink: #16161a;
-  --muted: #6b6c72;
-  --paper: #fbfaf7;
-  --surface: #ffffff;
-  --line: #e4e2dc;
-  --line-strong: #cfcdc6;
+  --ink: #20231f;
+  --muted: #6f6c64;
+  --paper: #f5f1e8;
+  --surface: #fbf9f4;
+  --white: #fffdf9;
+  --line: #e3ddd0;
+  --line-strong: #cdc7b9;
   --accent: #ff7a00;
-  --accent-dark: #c25b00;
-  --accent-soft: #fff1e6;
-  --bot-ink: #171719;
-  --bot-paper: #fbfbfb;
-  --bot-line: #e6e6e8;
-  --bot-gray: #f2f2f1;
-  --bot-muted: #8c8c92;
+  --accent-dark: #d65f00;
+  --accent-soft: #ffeedd;
+  --bot-ink: #20231f;
+  --bot-paper: #fbf9f4;
+  --bot-line: #e7e2d6;
+  --bot-gray: #f1ede4;
+  --bot-muted: #8b8880;
+  --radius-card: 1.1rem;
+  --shadow-card: 0 1.2rem 2.6rem rgba(32, 35, 31, 0.07);
   --live: #42ad72;
   --mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -94,8 +97,8 @@ button {
   left: 0;
   right: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(22, 22, 26, 0.08);
-  background: rgba(251, 250, 247, 0.72);
+  border-bottom: 1px solid rgba(32, 35, 31, 0.08);
+  background: rgba(245, 241, 232, 0.74);
   backdrop-filter: blur(18px);
 }
 
@@ -148,8 +151,8 @@ button {
   padding: 0.25rem;
   border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 0.5rem 1.5rem rgba(22, 22, 26, 0.08);
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: 0 0.5rem 1.5rem rgba(32, 35, 31, 0.08);
   backdrop-filter: blur(14px);
   font-size: 13px;
 }
@@ -193,7 +196,7 @@ button {
   inset: auto 0 0 0;
   height: 32%;
   content: "";
-  background: linear-gradient(to bottom, rgba(251, 250, 247, 0), var(--paper));
+  background: linear-gradient(to bottom, rgba(245, 241, 232, 0), var(--paper));
   pointer-events: none;
 }
 
@@ -212,7 +215,7 @@ button {
 .section-number,
 .kicker {
   margin: 0;
-  color: var(--accent-dark);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 600;
@@ -220,24 +223,18 @@ button {
   text-transform: uppercase;
 }
 
+.kicker {
+  color: var(--muted);
+}
+
 .hero h1 {
   max-width: 940px;
-  margin: 22px 0 14px;
+  margin: 26px 0 28px;
   color: var(--ink);
-  font-size: clamp(54px, 7.4vw, 108px);
+  font-size: clamp(54px, 7.6vw, 112px);
   font-weight: 470;
   letter-spacing: -0.07em;
   line-height: 0.88;
-}
-
-.hero-line {
-  max-width: 40rem;
-  margin: 0 0 22px;
-  color: var(--ink);
-  font-size: clamp(24px, 2.6vw, 34px);
-  font-weight: 420;
-  letter-spacing: -0.035em;
-  line-height: 1.12;
 }
 
 .hero-intro {
@@ -351,7 +348,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 50%;
   color: var(--muted);
-  background: var(--surface);
+  background: var(--white);
   transition: color 160ms, border-color 160ms, background 160ms;
 }
 
@@ -403,9 +400,9 @@ button {
 }
 
 .section-number {
-  font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .job .kicker {
@@ -442,11 +439,11 @@ button {
 /* Grok Bot window chrome */
 .bot-window {
   overflow: hidden;
-  border: 1px solid var(--bot-line);
-  border-radius: 1.1rem;
+  border: 1px solid rgba(32, 35, 31, 0.06);
+  border-radius: var(--radius-card);
   color: var(--bot-ink);
   background: var(--bot-paper);
-  box-shadow: 0 1.6rem 3.4rem rgba(22, 22, 26, 0.09), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-card);
 }
 
 .bot-titlebar {
@@ -456,7 +453,7 @@ button {
   gap: 0.9rem;
   padding: 0.55rem 0.85rem;
   border-bottom: 1px solid var(--bot-line);
-  background: #fafafa;
+  background: var(--surface);
 }
 
 .traffic {
@@ -548,7 +545,7 @@ button {
   gap: 0.8rem;
   min-width: 0;
   padding: 1.1rem 1.1rem 0.9rem;
-  background: #fff;
+  background: var(--surface);
 }
 
 .bot-row {
@@ -583,13 +580,14 @@ button {
 
 .bot-row.is-you .bot-bubble {
   color: #fff;
-  background: #151513;
+  background: var(--ink);
   border-bottom-right-radius: 0.3rem;
 }
 
 .bot-row.is-bot .bot-bubble {
-  color: #222224;
-  background: var(--bot-gray);
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--bot-line);
   border-bottom-left-radius: 0.3rem;
 }
 
@@ -646,7 +644,7 @@ button {
   border: 1px solid var(--bot-line);
   border-radius: 50%;
   color: var(--accent);
-  background: #fff;
+  background: var(--white);
 }
 
 .bot-composer svg {
@@ -657,10 +655,10 @@ button {
 .bot-composer p {
   margin: 0;
   padding: 0.55rem 0.75rem;
-  border: 1px solid #dedee1;
+  border: 1px solid var(--bot-line);
   border-radius: 999px;
-  color: #aaaab0;
-  background: #fff;
+  color: var(--bot-muted);
+  background: var(--white);
   font-size: 0.74rem;
 }
 
@@ -672,7 +670,7 @@ button {
   min-width: 0;
   padding: 0.9rem;
   border-left: 1px solid var(--bot-line);
-  background: #f5f5f3;
+  background: #f1ede4;
 }
 
 .bot-computer-bar {
@@ -702,11 +700,11 @@ button {
 }
 
 .fact-card {
-  padding: 0.85rem 0.9rem;
-  border: 1px solid #e5e5e7;
-  border-radius: 0.85rem;
-  background: #fff;
-  box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.05);
+  padding: 0.9rem 0.95rem;
+  border: 1px solid rgba(32, 35, 31, 0.06);
+  border-radius: 0.9rem;
+  background: var(--white);
+  box-shadow: 0 0.6rem 1.4rem rgba(32, 35, 31, 0.05);
 }
 
 .fact-card > * + * {
@@ -718,22 +716,18 @@ button {
   justify-content: space-between;
   gap: 0.75rem;
   margin: 0;
-  color: #5f5f65;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  color: var(--bot-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .fact-meta span:last-child {
-  color: var(--accent-dark);
   text-align: right;
 }
 
 .fact-card h3 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 560;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -752,7 +746,7 @@ button {
   justify-content: space-between;
   gap: 0.6rem;
   padding: 0.45rem 0;
-  border-top: 1px solid #ececee;
+  border-top: 1px solid var(--bot-gray);
 }
 
 .fact-lines li:first-child {
@@ -801,8 +795,9 @@ button {
 
 .fact-chips span {
   padding: 0.28rem 0.6rem;
-  border: 1px solid #dedee1;
+  border: 1px solid var(--bot-line);
   border-radius: 999px;
+  background: var(--surface);
   font-size: 0.68rem;
   font-weight: 500;
 }
@@ -816,11 +811,7 @@ button {
   display: block;
   height: 0.55rem;
   border-radius: 999px;
-  background: repeating-linear-gradient(
-    135deg,
-    #ececee 0 6px,
-    #f6f6f7 6px 12px
-  );
+  background: #ece7dc;
 }
 
 .fact-bars i:nth-child(even) {
@@ -863,13 +854,9 @@ button {
 .principles-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  gap: 1rem;
   margin: 3rem 0 0;
   padding: 0;
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  background: var(--line);
-  overflow: hidden;
   list-style: none;
 }
 
@@ -878,7 +865,10 @@ button {
   flex-direction: column;
   gap: 0.8rem;
   padding: 1.5rem 1.4rem 1.7rem;
+  border: 1px solid rgba(32, 35, 31, 0.05);
+  border-radius: var(--radius-card);
   background: var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
 .principles-grid span {
@@ -913,8 +903,8 @@ button {
 
 .people {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
   margin: 2.5rem 0 0;
   padding: 0;
   list-style: none;
@@ -923,8 +913,11 @@ button {
 .person {
   display: grid;
   gap: 0.4rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--ink);
+  padding: 1.3rem 1.4rem 1.4rem;
+  border: 1px solid rgba(32, 35, 31, 0.05);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
 }
 
 .person b {
@@ -1005,9 +998,9 @@ button {
   width: min(480px, 100%);
   padding: clamp(32px, 6vw, 58px) clamp(28px, 5vw, 48px) 42px;
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 1.1rem;
-  box-shadow: 0 1.6rem 3.4rem rgba(22, 22, 26, 0.07);
+  border: 1px solid rgba(32, 35, 31, 0.05);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
 }
 
 .login-card .eyebrow {
@@ -1096,7 +1089,7 @@ button {
 
 .hero-phone-jobs button span svg{width:.72rem;height:.72rem}
 
-.hero-phone{color:#171719;background:#fbfbfb;border:4px solid #333338;border-radius:3.2rem;flex-direction:column;align-self:flex-end;width:17rem;max-width:100%;height:34rem;display:flex;position:relative;overflow:hidden;box-shadow:0 2.5rem 5rem #16161a33,inset 0 0 0 1px #1111111a}
+.hero-phone{color:#171719;background:#fbfbfb;border:4px solid #333338;border-radius:3.2rem;flex-direction:column;align-self:flex-end;width:17rem;max-width:100%;height:34rem;display:flex;position:relative;overflow:hidden;box-shadow:0 2.5rem 5rem #20231f33,inset 0 0 0 1px #1111111a}
 
 .hero-phone:after{content:"";background:#0f0f10c7;width:4.5rem;height:.18rem;bottom:.26rem}
 
@@ -1192,8 +1185,7 @@ button {
     border-top: 1px solid var(--line);
   }
 
-  .principles-grid,
-  .people {
+  .principles-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
