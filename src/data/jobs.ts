@@ -1,22 +1,12 @@
 import type { InterJob, Person } from "./types";
 
 /**
- * What Inter described on September 11, framed with Inter's public 2Q26
- * figures. Every number on this page is either a public Inter figure with its
- * period and source, or a blank count Inter can run. Nothing is a Grok Bot
- * result, and no blank is filled with our number.
+ * What Inter described on September 11. The only numbers on this page are
+ * Inter's public 2Q26 figures, used where they are the point of the sentence.
+ * Nothing here is a Grok Bot result. Where Inter did not give a store, a
+ * price, a figure, a task, or a name, the page says so instead of filling it.
  */
 
-const DECK = "2Q26 results deck, Aug 2026";
-const CALL = "2Q26 earnings call, 6 Aug 2026";
-const Q1 = "1Q26 results, last clean print";
-const Q4 = "4Q25 results";
-/* Short forms for the count rows, where space is tight. */
-const DECK_S = "2Q26 deck, Aug 2026";
-const CALL_S = "2Q26 call, 6 Aug 2026";
-const Q1_S = "1Q26 results";
-const RUN = "Count to run";
-const BLANK = "Blank today";
 
 export const JOBS: InterJob[] = [
   {
@@ -29,22 +19,9 @@ export const JOBS: InterJob[] = [
     icon: "cart",
     status: "Illustrative thread",
     outcome:
-      "Attach and take rate, not a beer order. One ask crosses Shopping, the check-in account, and insurance, and the buyer is flagged as a primary client. Shopping is a profit problem, and primary clients still hold less than 5% of their credit at Inter.",
-    facts: [
-      {
-        text: "Shopping GMV R$1,215 million and 3.6 million shoppers",
-        source: Q1,
-      },
-      {
-        text: "Net take rate 7.9%, up from 7.3% a year earlier, after cutting cashback",
-        source: Q4,
-      },
-      {
-        text: "Primary clients hold less than 5% of their system credit at Inter",
-        source: `João, ${CALL}`,
-      },
-      { text: "Insurance 9.0 million active contracts", source: Q1 },
-    ],
+      "Shopping is a profit problem, not a traffic problem. 3.6 million people bought R$1,215 million of goods there last quarter. The number that matters is how many of those orders leave with an Inter account and Inter insurance attached. One ask, three products, one confirmation.",
+    missing:
+      "Primary clients still hold less than 5% of their credit at Inter. Every attached product moves that.",
     steps: [
       {
         label: "Reads the ask",
@@ -66,15 +43,6 @@ export const JOBS: InterJob[] = [
         label: "Hands back one summary",
         detail: "Order, payment, and insurance in one card for the customer to confirm. No confirmation is faked.",
       },
-    ],
-    measures: [
-      { label: "Checkout conversion inside the thread", frame: RUN },
-      { label: "Insurance attach on Shopping orders", frame: RUN },
-      { label: "BNPL share of orders", frame: RUN },
-      { label: "Buyers flagged as primary clients", frame: RUN },
-      { label: "Shopping GMV, 1Q26", value: "R$1,215 million", source: Q1_S },
-      { label: "Net take rate, 4Q25", value: "7.9%", source: Q4 },
-      { label: "Shopping GMV, 2Q26", frame: `${BLANK}, not published` },
     ],
     thread: [
       { from: "you", text: "Buy some beer for next week." },
@@ -116,19 +84,7 @@ export const JOBS: InterJob[] = [
     icon: "lake",
     status: "No IDE",
     outcome:
-      "A number back in the thread without opening an IDE, for the people who are not engineers. The client-facing AI is built. The gap is the analyst who answers internal questions, and Inter posted that role in 2026.",
-    facts: [
-      { text: "Data Vault grew 43 PB from 2019 to 2025", source: DECK },
-      {
-        text: "Seven, the client AI, 6 million active users",
-        source: DECK,
-      },
-    ],
-    hiring: {
-      roles: "Analytics Partner",
-      where: "Belo Horizonte or São Paulo",
-      note: "SQL and Tableau partner, AI in the analytical flow. Data-lake questions without an engineer. Posted in 2026.",
-    },
+      "Inter has the data. The people who need an answer still wait on an engineer. Grok Bot gives them the number back in the chat, no IDE. The count that matters is how many questions never become a ticket.",
     steps: [
       {
         label: "Takes the question",
@@ -146,14 +102,6 @@ export const JOBS: InterJob[] = [
         label: "Hands back the report",
         detail: "Delivered in the thread, ready to forward. The IDE stays closed.",
       },
-    ],
-    measures: [
-      { label: "Questions asked per week", frame: RUN },
-      { label: "Answered without an IDE", frame: RUN },
-      { label: "Median time to an answer", frame: RUN },
-      { label: "Share that still becomes an engineer ticket", frame: RUN },
-      { label: "Data Vault growth, 2019 to 2025", value: "+43 PB", source: DECK_S },
-      { label: "Seven active users, 2Q26", value: "6 million", source: DECK_S },
     ],
     thread: [
       {
@@ -176,20 +124,6 @@ export const JOBS: InterJob[] = [
       },
     ],
     cards: [
-      {
-        label: "Ask",
-        tag: "No IDE",
-        title: "A question for the lake",
-        bars: 2,
-        note: "Inter did not name the question.",
-      },
-      {
-        label: "Report",
-        tag: "No figures",
-        title: "The report comes back",
-        bars: 4,
-        note: "The IDE stays closed. No numbers were given.",
-      },
     ],
   },
   {
@@ -202,20 +136,7 @@ export const JOBS: InterJob[] = [
     icon: "finops",
     status: "One bot, shared",
     outcome:
-      "One monthly cloud, SaaS, and GenAI pack, from the same Vic for every team, on the way from a 42.1% efficiency ratio toward the 30% north star. Inter posted two FinOps roles in Belo Horizonte in 2026 to build this pack by hand.",
-    facts: [
-      {
-        text: "Efficiency ratio 42.1%, a new low. North star 30%",
-        source: DECK,
-      },
-      { text: "Expenses +19% YoY against net revenue +32%", source: DECK },
-      { text: "Headcount about 4,000 and stable", source: CALL },
-    ],
-    hiring: {
-      roles: "FinOps Analyst III and FinOps Specialist I",
-      where: "Belo Horizonte",
-      note: "AWS, GCP, Azure, executive cost packs, SaaS and GenAI chargeback. This is Vic's job description. Posted in 2026.",
-    },
+      "Efficiency is 42.1%. The goal is 30%. Cloud, SaaS, and AI spend is one of the lines that has to move. Vic gives every team the same answer on cost and hands the CFO one pack a month. The number that matters is spend against budget, on one page, before the invoice closes.",
     steps: [
       {
         label: "A team asks Vic",
@@ -237,18 +158,6 @@ export const JOBS: InterJob[] = [
         label: "Presents it",
         detail: "Hands the pack to the CFO and stays in the thread for questions.",
       },
-    ],
-    measures: [
-      {
-        label: "Monthly cloud, SaaS, and GenAI spend",
-        frame: `${BLANK}, not published`,
-      },
-      { label: "Variance against budget", frame: RUN },
-      { label: "Reais from rightsizing", frame: RUN },
-      { label: "Anomalies caught before invoice close", frame: RUN },
-      { label: "Hours from close to a board page", frame: RUN },
-      { label: "Efficiency ratio, 2Q26", value: "42.1%", source: DECK_S },
-      { label: "Efficiency north star", value: "30%", source: `Compass, ${DECK_S}` },
     ],
     thread: [
       {
@@ -287,13 +196,6 @@ export const JOBS: InterJob[] = [
           { b: "The monthly close", s: "Vic presents the CFO report." },
         ],
       },
-      {
-        label: "Monthly CFO report",
-        tag: "No figures",
-        title: "Presented by Vic",
-        bars: 3,
-        note: "Inter did not give the numbers in the report.",
-      },
     ],
   },
   {
@@ -306,23 +208,7 @@ export const JOBS: InterJob[] = [
     icon: "busywork",
     status: "Guided, not blank",
     outcome:
-      "Selling time back on a base that already pays 2.8x average ARPAC, 2.9 million business clients, while headcount stays near 4,000. Inter posted Shopping commercial analysts in 2026 to babysit offer calendars and GMV sheets. Guided example only.",
-    facts: [
-      {
-        text: "Business clients 2.9 million, +24% YoY, 2.8x average gross ARPAC",
-        source: DECK,
-      },
-      {
-        text: "11.7% of Brazilian companies. SME book +15% in the quarter",
-        source: DECK,
-      },
-      { text: "Headcount about 4,000 and stable", source: CALL },
-    ],
-    hiring: {
-      roles: "Commercial Analyst III, Shopping",
-      where: "Belo Horizonte",
-      note: "Store portfolio, GMV, average ticket, offer calendar. Posted in 2026.",
-    },
+      "Business clients pay 2.8 times the average client, and headcount is about 4,000. The commercial team should be selling to them, not filling calendars and GMV sheets. Grok Bot takes the busywork after one guided example. The number that matters is hours spent selling.",
     steps: [
       {
         label: "Starts from a guided example",
@@ -340,14 +226,6 @@ export const JOBS: InterJob[] = [
         label: "Leaves a review list",
         detail: "The team approves in one pass. The busywork is off the desk.",
       },
-    ],
-    measures: [
-      { label: "Hours per week on calendars and GMV sheets", frame: RUN },
-      { label: "Hours per week selling", frame: RUN },
-      { label: "GMV or fee revenue per selling hour", frame: RUN },
-      { label: "Routines running without a prompt", frame: RUN },
-      { label: "Business clients, 2Q26", value: "2.9 million", source: DECK_S },
-      { label: "Business client ARPAC multiple", value: "2.8x", source: DECK_S },
     ],
     thread: [
       {
@@ -402,13 +280,7 @@ export const JOBS: InterJob[] = [
     icon: "haggle",
     status: "A thing to try",
     outcome:
-      "Still a thing to try, not an Inter result. The only public support is a FinOps Specialist posting that asks for SaaS and GenAI visibility and chargeback. If Inter runs it, the savings slot fills with Inter's number, not ours.",
-    facts: [],
-    hiring: {
-      roles: "FinOps Specialist I",
-      where: "Belo Horizonte",
-      note: "SaaS and GenAI visibility, chargeback. Posted in 2026.",
-    },
+      "A thing to try, not a result. Every SaaS renewal gets a drafted ask before it auto-renews, and nothing goes to a vendor until Guilherme approves. There is no savings figure, because Inter has not run it.",
     steps: [
       {
         label: "Inventories the SaaS stack",
@@ -430,14 +302,6 @@ export const JOBS: InterJob[] = [
         label: "Reports what moved",
         detail: "Only after Inter runs it. No savings figure exists today.",
       },
-    ],
-    measures: [
-      { label: "Contracts under management", frame: RUN },
-      { label: "Renewals in the next 90 days", frame: RUN },
-      { label: "Last price against invoice", frame: RUN },
-      { label: "Proposed versus accepted", frame: RUN },
-      { label: "Hours of negotiation", frame: RUN },
-      { label: "Savings", frame: `${BLANK}, no Inter result` },
     ],
     thread: [
       {
@@ -486,26 +350,9 @@ export const JOBS: InterJob[] = [
     icon: "campaign",
     status: "Onboarding",
     outcome:
-      "Incremental ARPAC or GMV on a holdout, not emails sent. One extra real of monthly ARPAC across 26.4 million active clients is about R$317 million a year before the cost of earning it. A count, not a forecast.",
-    facts: [
-      {
-        text: "26.4 million active clients of 45.3 million total. About 22 million average daily logins",
-        source: `${DECK}; ${CALL}`,
-      },
-      {
-        text: "New cohorts start about R$10 higher in initial gross ARPAC",
-        source: DECK,
-      },
-      {
-        text: "Private payroll clients 3.7x average gross ARPAC. Business clients 2.8x",
-        source: DECK,
-      },
-    ],
-    hiring: {
-      roles: "Growth Analyst I, Marketplace and Mortgage",
-      where: "Belo Horizonte, posted 27 Aug 2026",
-      note: "Salesforce-class CRM, A/B tests, uplift, journeys. Hand-matching journeys today.",
-    },
+      "26.4 million active clients. Net ARPAC is R$35.5 a month. One more real a month across that base is about R$317 million a year. Grok Bot matches each new customer to the right onboarding campaign, keeps a holdout, and logs it in Salesforce.",
+    missing:
+      "The lift is the number, and it is Inter's to measure. Nothing here guesses it.",
     steps: [
       {
         label: "A customer enters onboarding",
@@ -523,17 +370,6 @@ export const JOBS: InterJob[] = [
         label: "Logs it in Salesforce",
         detail: "Writes the match, the reason, and the holdout flag back for the growth team.",
       },
-    ],
-    measures: [
-      { label: "Eligible customers", frame: RUN },
-      { label: "Matched and enrolled", frame: RUN },
-      { label: "Sent versus held out", frame: RUN },
-      { label: "Incremental conversion", frame: RUN },
-      { label: "Incremental monthly ARPAC", frame: RUN },
-      { label: "Days from idea to live test", frame: RUN },
-      { label: "A/B result", frame: `${BLANK}, from Inter's own test` },
-      { label: "Active clients, 2Q26", value: "26.4 million", source: DECK_S },
-      { label: "New-cohort ARPAC gap", value: "about R$10", source: DECK_S },
     ],
     thread: [
       {
@@ -580,22 +416,9 @@ export const JOBS: InterJob[] = [
     icon: "ads",
     status: "Budget not given",
     outcome:
-      "Faster CAC payback, not more raw accounts. That is what Inter told investors the paid spend is for. The quality proof is the R$10 cohort gap and 58.3% activation. CAC in reais and the budget were not published.",
-    facts: [
-      {
-        text: "Activation 58.3%: 26.4 million active of 45.3 million total clients",
-        source: DECK,
-      },
-      {
-        text: "New cohorts start about R$10 higher in initial gross ARPAC",
-        source: DECK,
-      },
-    ],
-    hiring: {
-      roles: "Growth Manager, US Growth",
-      where: "São Paulo or Belo Horizonte",
-      note: "Google Ads, Facebook Ads, AppsFlyer, CAC logic for Brazil, Argentina, and the US. Not a Miami seat. Posted in 2026.",
-    },
+      "The payoff Inter already named is a cheaper, richer account, not more raw sign-ups. Grok Bot checks Google Ads every morning, proposes each budget shift with payback as the reason, and waits for approval.",
+    missing:
+      "The missing number is what a new account costs. Inter has not published it, so it is not on this page.",
     steps: [
       {
         label: "Checks the account each morning",
@@ -613,15 +436,6 @@ export const JOBS: InterJob[] = [
         label: "Applies after approval",
         detail: "Growth approves in the thread, then Grok Bot makes the change and logs it.",
       },
-    ],
-    measures: [
-      { label: "Spend by market", frame: `${BLANK}, budget not published` },
-      { label: "Qualified accounts", frame: RUN },
-      { label: "CAC in reais", frame: `${BLANK}, not published` },
-      { label: "Payback months", frame: RUN },
-      { label: "90-day ARPAC, paid versus organic", frame: RUN },
-      { label: "Split Brazil, Argentina, US", frame: RUN },
-      { label: "Activation, 2Q26", value: "58.3%", source: DECK_S },
     ],
     thread: [
       {
@@ -644,13 +458,6 @@ export const JOBS: InterJob[] = [
       },
     ],
     cards: [
-      { label: "Budget", tag: "Not given", title: "Unmarked", bars: 1 },
-      {
-        label: "Cost of acquisition",
-        tag: "Not given",
-        title: "Unmarked",
-        bars: 1,
-      },
     ],
   },
   {
@@ -663,30 +470,7 @@ export const JOBS: InterJob[] = [
     icon: "finance",
     status: "No IDE",
     outcome:
-      "The 2Q26 pack João already says out loud, built from the lake, sourced on every line, without the IDE. Inter posted FP&A analysts in São Paulo in 2026 who already want AI in the close.",
-    facts: [
-      {
-        text: "Rule of 50 score 48: net revenue growth 31.7% YoY plus ROE 16.3%",
-        source: `${DECK}; ${CALL}`,
-      },
-      {
-        text: "Efficiency ratio 42.1%. NIM 10.12%. NPL over 90 days 5.0%",
-        source: DECK,
-      },
-      {
-        text: "Net income R$421 million, also stated as US$81 million",
-        source: DECK,
-      },
-      {
-        text: "Net ARPAC R$35.5 a month, cost to serve R$13.2, margin per active client R$22.2",
-        source: DECK,
-      },
-    ],
-    hiring: {
-      roles: "Financial Planning Analyst",
-      where: "São Paulo",
-      note: "Excel, SQL, Python, AI in the close, executive packs. This is the finance desk without the IDE. Posted in 2026.",
-    },
+      "The pack João already says out loud: Rule of 50 at 48, efficiency 42.1%, 26.4 million active clients, R$35.5 net ARPAC against R$13.2 to serve. Finance builds it today in Cursor. Grok Bot builds it from a chat, every line traced to the lake, no IDE.",
     steps: [
       {
         label: "Finance asks in plain language",
@@ -709,16 +493,6 @@ export const JOBS: InterJob[] = [
         detail: "Pack and extract in the thread, ready for review. Grok Bot, not Cursor.",
       },
     ],
-    measures: [
-      { label: "Hours to build the pack", frame: RUN },
-      { label: "Extracts that still need an IDE", frame: RUN },
-      { label: "Time from close to a page", frame: RUN },
-      { label: "Rule of 50 score, 2Q26", value: "48", source: `${DECK_S}; ${CALL_S}` },
-      { label: "Efficiency ratio, 2Q26", value: "42.1%", source: DECK_S },
-      { label: "Net ARPAC, monthly, 2Q26", value: "R$35.5", source: DECK_S },
-      { label: "Cost to serve, 2Q26", value: "R$13.2", source: DECK_S },
-      { label: "ROE, 2Q26", value: "16.3%", source: DECK_S },
-    ],
     thread: [
       {
         from: "you",
@@ -734,7 +508,7 @@ export const JOBS: InterJob[] = [
         from: "bot",
         text: "Done. The pack and the extract are attached for review.",
         artifact: {
-          title: "2Q26 pack, sourced on every line",
+          title: "2Q26 pack, every line traced to the lake",
           note: "Rule of 50 = 48, efficiency 42.1%, active 26.4 million, net ARPAC R$35.5, cost to serve R$13.2, ROE 16.3%, NIM 10.12%, NPL over 90 days 5.0%. Public 2Q26 figures. No other cell filled in.",
         },
       },

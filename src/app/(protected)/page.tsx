@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { BotPrinciples } from "@/components/BotPrinciples";
-import { CeoStrip } from "@/components/CeoStrip";
 import { HeroDemo } from "@/components/HeroDemo";
 import { JobIcon } from "@/components/Icons";
 import { JobSection } from "@/components/JobSection";
@@ -30,17 +29,17 @@ export default function HomePage() {
           <HeroDemo />
         </section>
 
-        <CeoStrip />
+        <p className="score-line">
+          Rule of 50 is 48. Efficiency is 42.1% against a 30% goal. These
+          eight jobs are how the work moves those numbers.
+        </p>
 
         <section className="usecase-framing" id="jobs">
           <p className="eyebrow">Eight jobs</p>
           <h2>Each one is a Bot with a job. Named on the call, not invented here.</h2>
           <p>
             Where Inter did not give a store, a price, a figure, a task, or a
-            name, the page says so instead of filling the gap. Each job shows
-            the outcome, the steps, and what to count. Public Inter figures
-            carry their period and source. Every other count stays blank until
-            Inter runs it.
+            name, the page says so instead of filling the gap.
           </p>
         </section>
 
@@ -75,6 +74,7 @@ export default function HomePage() {
         <div>
           <p className="footer-title">Grok Bot for Inter</p>
           <p>Inter × SpaceXAI. Password protected leave-behind.</p>
+          <p>Public 2Q26 figures. Not a Grok Bot result.</p>
         </div>
         <address className="footer-contact">
           <p>Your Cursor contact</p>

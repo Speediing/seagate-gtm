@@ -177,60 +177,14 @@ export function BotWindow({ job }: { job: InterJob }) {
           <div className="fact-stack">
             <section className="fact-card is-outcome">
               <p className="fact-meta">
-                <span>Outcome</span>
-                <span>For João</span>
+                <span>Why it matters</span>
               </p>
               <p className="fact-outcome">{job.outcome}</p>
-              {job.facts.length ? (
-                <ul className="fact-public">
-                  {job.facts.map((fact) => (
-                    <li key={fact.text}>
-                      <span>{fact.text}</span>
-                      <small>Public Inter figure · {fact.source}</small>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-              {job.hiring ? (
-                <p className="fact-hiring">
-                  <b>Hiring that maps</b>
-                  <span>
-                    Inter posted {job.hiring.roles}, {job.hiring.where}, in
-                    2026. {job.hiring.note}
-                  </span>
-                </p>
-              ) : null}
+              {job.missing ? <p className="fact-missing">{job.missing}</p> : null}
             </section>
             {job.cards.map((card, index) => (
               <Card key={index} card={card} />
             ))}
-            <section className="fact-card is-measure">
-              <p className="fact-meta">
-                <span>What to count</span>
-                <span>Sourced or frame</span>
-              </p>
-              <ul className="fact-measures">
-                {job.measures.map((measure) => (
-                  <li key={measure.label}>
-                    <span>{measure.label}</span>
-                    {measure.value ? (
-                      <b className="measure-public">
-                        {measure.value}
-                        <small>Public · {measure.source}</small>
-                      </b>
-                    ) : (
-                      <i className="measure-frame">{measure.frame}</i>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              <p className="fact-legend">
-                <b>Public</b> is a published Inter figure, with its period and
-                source. <b>Count to run</b> is a frame Inter can measure.{" "}
-                <b>Blank today</b> means Inter has not published it. No blank is
-                filled with our number.
-              </p>
-            </section>
           </div>
         </aside>
       </div>

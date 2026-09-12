@@ -22,19 +22,7 @@ export type ThreadFrom = "you" | "bot" | "system";
 
 export type Step = { label: string; detail: string };
 
-export type PublicFact = { text: string; source: string };
 
-export type Hiring = { roles: string; where: string; note: string };
-
-export type Measure = {
-  label: string;
-  /** Present only for a public Inter figure. Never an invented number. */
-  value?: string;
-  /** Period and source for the value. */
-  source?: string;
-  /** For frames: "Count to run", or "Blank today" when Inter has not published it. */
-  frame?: string;
-};
 
 export type ThreadMessage = {
   from: ThreadFrom;
@@ -73,16 +61,12 @@ export type InterJob = {
   bot: string;
   icon: HeroJobIcon;
   status: string;
-  /** What Inter gets when this job works. Business language, no invented figures. */
+  /** Why it matters to Inter, in plain words. Public numbers only, and only where they are the point. */
   outcome: string;
+  /** The one number still missing, said plainly. Never an empty slot. */
+  missing?: string;
   /** The job end to end, from the ask to the handoff. */
   steps: Step[];
-  /** Public Inter figures that frame the job. Each carries its period and source. */
-  facts: PublicFact[];
-  /** Inter hiring that maps to the job. Posted in 2026; not claimed open today. */
-  hiring?: Hiring;
-  /** What to count. A sourced value is a public Inter figure; no value means a count Inter can run. */
-  measures: Measure[];
   thread: ThreadMessage[];
   cards: FactCard[];
   caption?: string;
