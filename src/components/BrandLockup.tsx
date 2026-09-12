@@ -1,17 +1,8 @@
-export function BrandLockup({
-  size = "md",
-}: {
-  size?: "sm" | "md" | "lg";
-  invert?: boolean;
-}) {
+export function BrandLockup({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
   return (
     <div className={`brand-lockup brand-lockup-${size}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/brand/seagate-wordmark.svg"
-        alt="Seagate"
-        className="brand-dd"
-      />
+      <img src="/brand/inter-wordmark.svg" alt="Inter" className="brand-inter" />
       <span className="brand-times" aria-hidden>
         ×
       </span>

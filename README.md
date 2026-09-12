@@ -1,10 +1,15 @@
-# Grok Bot for Seagate sales
+# Grok Bot for Inter
 
-Passworded Seagate sales leave-behind for Grok Bot from SpaceXAI. The page uses Seagate storage stories and artwork while keeping the established hero, phone mock, three jobs, six-agent band, comparison, and six public testimonials. The lockup is Seagate × SpaceXAI.
+Passworded Inter × SpaceXAI leave-behind for Grok Bot. Eight jobs Inter named on September 11, one bot, a live phone demo in the hero, and nothing Inter did not say.
 
 ## What it is
 
-Three Seagate GTM jobs on one page. The stories use Aster Peak Compute, a fictional account, to cover a live Exos deck update, overnight drive-order questions, and outbound built from storage signals. Each job has an interactive Grok Bot demo and the matching Krista Letz clip. The existing comparison and public Grok Bot quote wall remain unchanged.
+- Hero: "Grok Bot for Inter". A virtual iPhone (`hero-bot-demo` / `hero-phone`) cycles through the eight jobs. Chips let you pick one.
+- Eight jobs, each in Grok Bot window chrome with a thread on the left and the Bot's "Computer" pane on the right. Where Inter did not give a store, a price, a figure, a task, or a name, the page says so instead of filling the gap.
+- "How Grok Bot works" band, phrased from x.ai/bot. Product description, not an Inter result.
+- "Who said it": João, Davidson Castro, Guilherme Ximenes, Thiago Machado.
+
+Structure comes from the earlier customer leave-behind template (hero phone, jobs data, password gate). None of the earlier customers' branding or artwork ships here; `npm run audit:copy` checks.
 
 ## Run locally
 
@@ -14,18 +19,12 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Default password is `land2expand` (override with `SITE_PASSWORD`).
-
-## Krista clips
-
-Download into `private/media/krista-clips/` from the GitHub release (served only through the passworded `/api/media/...` route):
-
-```bash
-gh release download krista-gtm-clips-720p-2026-08-26 \
-  --repo Speediing/grok-bot-quotes \
-  --dir private/media/krista-clips
-```
+Open [http://localhost:3000](http://localhost:3000). Default password is `agentteam` (override with `SITE_PASSWORD`).
 
 ## Deploy
 
-Preview only. Jason preview-deploys under the `jasonwiker` Vercel team, project name `seagate-gtm`. Set `SITE_PASSWORD=land2expand`. Do not run `vercel --prod`. Do not promote to a public production domain until Jason says so.
+Vercel team `jasonwiker`. Set `SITE_PASSWORD=agentteam`. Preview first. The live URL `inter-grokbot.vercel.app` is an alias; point it at a deployment only when Jason says so:
+
+```bash
+vercel alias set <deployment-url> inter-grokbot.vercel.app --scope jasonwiker
+```
