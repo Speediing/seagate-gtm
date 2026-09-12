@@ -19,7 +19,7 @@ export const JOBS: InterJob[] = [
     icon: "cart",
     status: "Illustrative thread",
     outcome:
-      "Shopping is a profit problem, not a traffic problem. 3.6 million people bought R$1,215 million of goods there last quarter. The number that matters is how many of those orders leave with an Inter account and Inter insurance attached. One ask, three products, one confirmation.",
+      "Shopping is a profit problem, not a traffic problem. In the first quarter of 2026, 3.6 million people bought R$1,215 million of goods there. The number that matters is how many of those orders leave with an Inter account and Inter insurance attached. One ask, three products, one confirmation.",
     missing:
       "Primary clients still hold less than 5% of their credit at Inter. Every attached product moves that.",
     steps: [
