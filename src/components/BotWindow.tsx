@@ -1,16 +1,28 @@
 import type { FactCard, InterJob, ThreadMessage } from "@/data/types";
 import { BotMark, JobIcon } from "./Icons";
 
-function Message({ message, who }: { message: ThreadMessage; who: string }) {
+function Message({
+  message,
+  who,
+  bot,
+}: {
+  message: ThreadMessage;
+  who: string;
+  bot: string;
+}) {
   if (message.from === "system") {
     return <p className="bot-system">{message.text}</p>;
   }
   const isYou = message.from === "you";
   return (
     <div className={`bot-row ${isYou ? "is-you" : "is-bot"}`}>
-      <span className="bot-meta">{isYou ? message.sender || who : "Grok Bot"}</span>
+      <span className="bot-meta">{isYou ? message.sender || who : bot}</span>
       {message.redacted ? (
-        <div className="bot-bubble is-redacted" role="img" aria-label={message.redacted}>
+        <div
+          className="bot-bubble is-redacted"
+          role="img"
+          aria-label={message.redacted}
+        >
           <i aria-hidden />
           <i aria-hidden />
           <small>{message.redacted}</small>
@@ -88,7 +100,12 @@ export function BotWindow({ job }: { job: InterJob }) {
       <div className="bot-body">
         <div className="bot-thread">
           {job.thread.map((message, index) => (
-            <Message key={index} message={message} who={job.who} />
+            <Message
+              key={index}
+              message={message}
+              who={job.who}
+              bot={job.bot}
+            />
           ))}
           <div className="bot-composer" aria-hidden>
             <span>
