@@ -1,5 +1,5 @@
 {
-  "name": "seagate-gtm",
+  "name": "inter-gtm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,14 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "audit:copy": "node scripts/audit-seagate-copy.mjs"
+    "audit:copy": "node scripts/audit-inter-copy.mjs"
   },
   "dependencies": {
     "geist": "^1.7.2",
     "next": "15.5.24",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "vgpu": "^0.3.1"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
