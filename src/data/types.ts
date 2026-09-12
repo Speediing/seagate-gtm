@@ -20,6 +20,8 @@ export type HeroJobIcon =
 
 export type ThreadFrom = "you" | "bot" | "system";
 
+export type Step = { label: string; detail: string };
+
 export type ThreadMessage = {
   from: ThreadFrom;
   /** Who is typing, when it is not the person named on the job. */
@@ -27,6 +29,10 @@ export type ThreadMessage = {
   text?: string;
   /** Inter did not give the words. Show a redacted bubble instead of inventing them. */
   redacted?: string;
+  /** Render the job's end-to-end steps as a work card in the thread. */
+  steps?: boolean;
+  /** The work product handed back. Drafts stay drafts where Inter gave no numbers. */
+  artifact?: { title: string; note: string };
 };
 
 export type FactLine = { b: string; s: string; mark?: string };
@@ -53,6 +59,10 @@ export type InterJob = {
   bot: string;
   icon: HeroJobIcon;
   status: string;
+  /** What Inter gets when this job works. Business language, no invented figures. */
+  outcome: string;
+  /** The job end to end, from the ask to the handoff. */
+  steps: Step[];
   thread: ThreadMessage[];
   cards: FactCard[];
   caption?: string;
@@ -65,8 +75,8 @@ export type HeroJob = {
   icon: HeroJobIcon;
   who: string;
   named: string;
-  work: string;
-  result: string;
+  steps: string[];
+  outcome: string;
   user: string;
   reply: string;
 };

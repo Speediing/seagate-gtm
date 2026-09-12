@@ -106,12 +106,15 @@ export function HeroDemo() {
                 <span>Named by</span>
                 {job.who}
               </p>
-              <p className="hero-phone-work-meta">
-                <span>Named</span>
-                {job.named}
-              </p>
-              <p className="hero-phone-work-copy">{job.work}</p>
-              <strong>{job.result}</strong>
+              <ol className="hero-phone-steps">
+                {job.steps.map((step, index) => (
+                  <li key={step}>
+                    <span aria-hidden>{index + 1}</span>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+              <strong>{job.outcome}</strong>
             </article>
             <p className="hero-phone-message is-user">{job.user}</p>
             <p className="hero-phone-message is-bot">{job.reply}</p>
